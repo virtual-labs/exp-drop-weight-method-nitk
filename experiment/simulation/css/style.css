@@ -1,0 +1,978 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.simulation {
+  width: 800px;
+  height: 600px;
+  border: 1px solid black;
+}
+
+.simulation .topic {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+
+.subtopics {
+  width: 100%-20px;
+  margin-left: 20px;
+  line-height: 35px;
+}
+
+.subtopics ol li {
+  margin-left: 40px;
+}
+
+.subtopics p {
+  margin-left: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 15px;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  place-items: center;
+}
+
+.img1 {
+  height: 64px;
+  /* width: 47px; */
+  margin: 20px auto;
+}
+
+.img2 {
+  height: 77px;
+  /* width: 90px; */
+  margin: 20px auto;
+}
+
+.img3 {
+  height: 77px;
+  /* width: 90px; */
+  margin: 20px auto;
+}
+
+.img4 {
+  height: 172px;
+  width: 20px;
+  margin: 20px auto;
+
+}
+
+.img5 {
+  height: 159px;
+  width: 116px;
+  margin: 20px auto;
+
+}
+
+.img6 {
+  height: 119px;
+  /* width: 129px; */
+  margin: 20px auto;
+}
+
+/* next button */
+
+#buttonup {
+  border: 0;
+  cursor: pointer;
+  float: right;
+  margin-right: 20px;
+  background-color: white;
+}
+
+#buttondown {
+  border: 0;
+  cursor: pointer;
+  float: left;
+  margin-left: 20px;
+  background-color: white;
+  transform: scaleX(-1);
+  display: none;
+}
+
+#IBgraphbutton {
+  display: none;
+  border: 0;
+  cursor: pointer;
+  float: right;
+  margin-right: 20px;
+  width: 90px;
+  height: 30px;
+  border-radius: 20px;
+  border: 2px solid black;
+}
+
+#IBgraph {
+  display: none;
+  height: 400px;
+  width: 700px;
+  position: absolute;
+  background-color: white;
+  top: 110px;
+  left: 45px;
+  border: black solid;
+  border-width: 3px;
+  z-index: 7;
+}
+
+#IBgraph button {
+  width: 60px;
+  height: 31px;
+  border-radius: 20px;
+  cursor: pointer;
+  float: right;
+  margin-right: 8px;
+  position: relative;
+  margin-top: -38px;
+}
+
+.nextimg {
+  width: 45px;
+  height: 45px;
+}
+
+#content {
+  width: 800px;
+  height: 500px;
+}
+
+#content2 {
+  width: 800px;
+  height: 500px;
+}
+
+/* options */
+
+.simoptions {
+  background-color: rgba(135, 207, 235, 0.621);
+  width: 25%;
+  height: 550px;
+  float: left;
+  filter: blur(0px);
+}
+
+.procedure {
+  margin: 10px;
+}
+
+#exp {
+  height: 35px;
+  width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(65, 62, 62, 0.219);
+  cursor: pointer;
+}
+
+.insert-reset-observation {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.insert-reset-observation button {
+  width: 120px;
+  height: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.current {
+  margin: 10px;
+}
+
+.slider {
+  /* -webkit-appearance: none; */
+  width: 100%;
+  height: 5px;
+  border-radius: 5px;
+  background: black;
+  outline: none;
+  opacity: 0.5;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border: 2px solid red;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb:hover {
+  width: 20px;
+  height: 20px;
+}
+
+.materialdiv {
+  margin: 10px;
+}
+
+#materials {
+  height: 35px;
+  width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(65, 62, 62, 0.219);
+  cursor: pointer;
+}
+
+.thickness {
+  margin: 10px;
+}
+
+.hallcurrent {
+  margin: 10px;
+}
+
+.result {
+  margin: 10px;
+  text-align: left;
+}
+
+/* Simulation Box */
+
+.mainsimulation {
+  /* width: 10%; */
+  height: 500px;
+  float: 50%;
+  text-align: center;
+  position: absolute;
+}
+
+.circuit {
+  width: 600px;
+  height: 426px;
+  margin-top: 30px;
+}
+
+#add {
+  display: none;
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+
+#probe {
+  width: 18px;
+  height: 120px;
+  position: relative;
+  top: -368px;
+  left: 293px;
+  overflow: hidden;
+  animation-duration: 3s;
+  transition: transform .3s;
+  display: none;
+}
+@keyframes moveGrad {
+  0% {
+    left: 291px; top:331px;
+  }
+ 
+  100% {
+    left: 314px; top: 353px; width: 85px;
+  }
+}
+@keyframes moveGrad24 {
+  0% {
+    left: 291px; top:331px;
+  }
+ 
+  100% {
+    left: 314px; top: 353px; width: 85px;
+  }
+}
+@keyframes moveGrad1 {
+  0% {
+    left: 329px; top:450px;
+  }
+ 
+  100% {
+    left: 334px; top:444px;
+  }
+}
+@keyframes moveBeaker {
+  0% {
+    left: 583px; top: 362px;
+  }
+ 
+  100% {
+    left: 390px; top: 241px;
+  }
+}
+@keyframes moveDist {
+  0% {
+    left: 327px; top: 413px;
+  }
+ 
+  100% {
+    left: 405px; top: 176px;
+  }
+}
+@keyframes moveDist1 {
+  0% {
+    left: 327px; top: 413px;
+  }
+ 
+  100% {
+    left: 405px; top: 176px;
+  }
+}
+@keyframes moveBeaker1 {
+  0% {
+    left: 390px; top: 241px;
+  }
+ 
+  100% {
+    left: 456px; top: 362px;
+  }
+}
+@keyframes moveBeaker21 {
+  0% {
+    left: 390px; top: 241px;
+  }
+ 
+  100% {
+    left: 456px; top: 362px;
+  }
+}
+
+@keyframes moveBurette {
+  0% {
+    left: 587px; top: 242px; 
+  }
+  40%{
+    left: 587px; top: 139px; 
+  }
+  60%{
+    left: 697px; top: 139px; 
+  }
+ 
+  100% {
+    left: 698px; top: 242px; 
+  }
+}
+@keyframes moveBurette21 {
+  0% {
+    left: 587px; top: 242px; 
+  }
+  40%{
+    left: 587px; top: 139px; 
+  }
+  60%{
+    left: 697px; top: 139px; 
+  }
+ 
+  100% {
+    left: 698px; top: 240px; 
+  }
+}
+@keyframes moveStalag {
+  0% {
+    left: 698px; top: 242px;
+  }
+  30%{
+    left: 698px; top: 160px;
+  }
+  /* 50%{
+    left: 343px; top: 160px; height: 254px;
+  } */
+ 
+  100% {
+    left: 343px; top: 160px; height: 254px;
+  }
+}
+@keyframes moveWater {
+  0% {
+    left: 663px; top:444px;
+  }
+ 
+  100% {
+    left: 663px; top:366px;
+  }
+}
+@keyframes moveDrop {
+  0% {
+    left:  350px; top: 415px;
+  }
+ 
+  
+ 
+  100% {
+    left:  350px; top: 476px;
+  }
+}
+@keyframes moveDrop1 {
+  0% {
+    left:  350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left:  350px; top: 476px;
+  }
+}
+@keyframes moveDrop2 {
+  0% {
+    left:  350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left:  350px; top: 476px;
+  }
+}
+@keyframes moveDrop3 {
+  0% {
+    left:  350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left:  350px; top: 476px;
+  }
+}
+@keyframes moveDrop4 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop5 {
+  0% {
+    left: 350px;top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px;top: 476px;
+  }
+}
+@keyframes moveDrop6 {
+  0% {
+    left:350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left:350px; top: 476px;
+  }
+}
+@keyframes moveDrop7 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop8 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop9 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop10 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop11 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop12 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop13 {
+  0% {
+    left: 350px;top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px;top: 476px;
+  }
+}
+@keyframes moveDrop14 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop15 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop16 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop17 {
+  0% {
+    left:350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left:350px; top: 476px;
+  }
+}
+@keyframes moveDrop18 {
+  0% {
+    left: 350px;top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left:  350px; top: 476px;
+  }
+}
+@keyframes moveDrop19 {
+  0% {
+    left: 350px; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left: 350px; top: 476px;
+  }
+}
+@keyframes moveDrop20 {
+  0% {
+    left:  350px;; top: 417px;
+  }
+ 
+  
+ 
+  100% {
+    left:  350px;; top: 476px;
+  }
+}
+@keyframes moveKerosene {
+  0% {
+    left: 657px; top:444px;
+  }
+ 
+  100% {
+    left: 657px; top:370px;
+  }
+}
+@keyframes moveWater1 {
+  0% {
+    left: 680px; top:397px;
+  }
+ 
+  100% {
+    left: 680px; top:403px;
+  }
+}
+@keyframes moveKerosene1 {
+  0% {
+    left: 680px; top:397px;
+  }
+ 
+  100% {
+    left: 680px; top:403px;
+  }
+}
+#grad {
+  height: 72px;
+  background-image: linear-gradient(
+    to right,
+
+    rgb(171, 180, 180),
+    rgb(171, 180, 180)
+   
+  );
+}
+#grad111 {
+  height: 72px;
+  background-image: linear-gradient(
+    to right,
+
+    rgb(60, 87, 243),
+    rgb(60, 87, 243)
+   
+  );
+}
+#grad2 {
+  height: 80px;
+  background-image: linear-gradient(
+    to right,
+    rgb(260, 260, 260),
+    rgb(260, 260, 260)
+  );
+}
+#grad222 {
+  height: 80px;
+  background-image: linear-gradient(
+    to right,
+    rgb(260, 260, 260),
+    rgb(260, 260, 260)
+  );
+}
+#grad1 {
+  height: 20px;
+  background-image: linear-gradient(
+    to right,
+
+    rgb(171, 180, 180),
+    rgb(171, 180, 180)
+   
+  );
+}
+#grad21 {
+  height: 20px;
+  background-image: linear-gradient(
+    to right,
+
+    rgb(60, 87, 243),
+    
+    rgb(60, 87, 243)
+   
+  );
+}
+#grad4 {
+  height: 20px;
+  background-image: linear-gradient(
+    to right,
+
+    rgb(171, 180, 180),
+    rgb(171, 180, 180)
+   
+  );
+}
+#grad24 {
+  height: 24px;
+  background-image: linear-gradient(
+    to right,
+
+    rgb(60, 87, 243),
+    
+    rgb(60, 87, 243)
+   
+  );
+}
+#grad5 {
+  height: 72px;
+  background-image: linear-gradient(
+    to right,
+
+    rgb(171, 180, 180),
+    rgb(171, 180, 180)
+   
+  );
+}
+#grad25 {
+  height: 72px;
+  background-image: linear-gradient(
+    to right,
+
+    rgb(60, 87, 243),
+    rgb(60, 87, 243)
+   
+  );
+}
+#wire {
+  width: 189px;
+  height: 200px;
+  position: relative;
+  top: -433px;
+  left: 201px;
+  overflow: hidden;
+  animation-duration: 3s;
+  transition: transform .3s;
+  display: none;
+}
+
+
+
+
+
+.observation {
+  display: none;
+  height: 225px;
+  width: 660px;
+  position: absolute;
+  background-color: rgb(174, 215, 232);
+  top: 150px;
+  left: 66px;
+  border: black solid;
+  border-width: 6px;
+  z-index: 7;
+}
+
+.observation3 {
+  display: none;
+  height: 288px;
+  width: 567px;
+  position: absolute;
+  background-color: rgb(174, 215, 232);
+  top: 150px;
+  left: 66px;
+  border: black solid;
+  border-width: 6px;
+  z-index: 7;
+}
+.tablediv {
+  height: 360px;
+  justify-content: center;
+  display: flex;
+  overflow-y: hidden;
+}
+
+.observationTable {
+  border-collapse: collapse;
+  width: 95%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  height: min-content;
+  background-color: white;
+}
+
+.observation td,
+th {
+  border: 2px solid #000000;
+  text-align: center;
+  padding: 8px;
+}
+.observation3 td,
+th {
+  border: 2px solid #000000;
+  text-align: center;
+  padding: 8px;
+}
+.tableObservation {
+  display: flex;
+  height: 40px;
+  width: 100%-10px;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.tableObservation button {
+  width: 60px;
+  height: 31px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#content3 {
+  width: 800px;
+  height: 500px;
+}
+
+#graph {
+  width: 800px;
+  height: 500px;
+}
+
+.blocker {
+  display: none;
+  position: absolute;
+  height: 550px;
+  width: 800px;
+  z-index: 6;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.help {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-left: 5px;
+}
+
+.help button {
+  background-color: rgb(189, 231, 249);
+  border: 0;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.help img {
+  width: 25px;
+  height: 25px;
+}
+
+#instructions {
+  display: none;
+  height: 400px;
+  width: 700px;
+  position: absolute;
+  background-color: white;
+  top: 110px;
+  left: 45px;
+  border: black solid;
+  border-width: 3px;
+  z-index: 7;
+}
+
+.icontent {
+  margin-left: 35px;
+  line-height: 1.63rem;
+}
+
+#instructions button {
+  width: 60px;
+  height: 31px;
+  border-radius: 20px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+/* hover image names */
+
+.electromagnet {
+  height: 10em;
+  width: 12em;
+  position: absolute;
+  top: 90px;
+  left: 405px;
+  z-index: 5;
+}
+
+.ammeter {
+  height: 9em;
+  width: 12em;
+  position: absolute;
+  z-index: 5;
+  top: 320px;
+  left: 222px;
+}
+
+.digitalgaussmeter {
+  height: 9em;
+  width: 12em;
+  position: absolute;
+  z-index: 5;
+  top: 312px;
+  left: 585px;
+}
+
+.hallsensor {
+  height: 1em;
+  width: 6em;
+  position: absolute;
+  z-index: 5;
+  top: 457px;
+  left: 523px;
+}
+
+.hprobe {
+  height: 1.5em;
+  width: 5em;
+  position: absolute;
+  z-index: 5;
+  top: 457px;
+  left: 523px;
+}
+
+.powersupply {
+  height: 7em;
+  width: 12em;
+  position: absolute;
+  z-index: 5;
+  top: 338px;
+  left: 591px;
+}
