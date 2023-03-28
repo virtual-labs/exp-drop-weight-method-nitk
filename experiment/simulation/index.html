@@ -1,13 +1,341 @@
+<!-- Home page of simulator -->
 <!DOCTYPE html>
-<html>
-<head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
-</head>
-<body>
-		<!-- Your code goes here-->
+<html lang="en">
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+    <title>Virtual Lab</title>
+</head>
+
+<body>
+    <!-- simulation -->
+    <div class="simulation" id="simulation">
+        <div class="topic">
+            <h2>Surface Tension of water and kerosine by drop weight method</h2>
+        </div>
+        <div id="content">
+            <div class="subtopics">
+                <h4>Objective:</h4>
+                
+                    <p>To find the surface tension of kerosene by dropweight method</p>
+                    
+                
+                <h4>Apparatus Used:</h4>
+                <p>Stalagmometer, rubber balloon, Stand with clamp, weighing balance, Distilled water, Kerosene</p>
+            </div>
+            
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p>Rubber balloon</p><img class='img1' src="images/rubberbulb.png" alt="Rubber balloon">
+                </div>
+                <div class="grid-item">
+                    <p>Distilled water</p><img class='img2' src="images/beakerwithWater.png" alt="Distilled water">
+                </div>
+                <div class="grid-item">
+                    <p>Kerosene</p><img class='img3' src="images/beakerwithkerosen.png" alt="Kerosene">
+                </div>
+                <div class="grid-item">
+                    <p>Stalagmometer</p><img class='img4' src="images/stalaglomtr.png" alt="Stalagmometer">
+                </div>
+                <div class="grid-item">
+                    <p>Stand with clamp</p><img class='img5' src="images/standWithClamp.png" alt="Stand with clamp">
+                </div>
+                <div class="grid-item">
+                    <p>Weighing balance</p><img class='img6' src="images/wm1.png" alt="Weighing balance">
+                </div>
+            </div>
+            
+        </div>
+        
+
+        <!-- content2 -->
+        <div style="display: none;" id="content2">
+            <div class="blocker" onclick="closeobservation()" id="blocker"></div>
+
+            <div class="simoptions" id="simoptions">
+                <div class="procedure">
+                    <label style="text-align:left;">Choose the experiment :</label><br>
+                    <select name="exp" id="exp" onChange="update()" onChange="checkClicked(evt)" >
+                        <option value="Empty" hidden>Select the liquid</option>
+                        <option value="Distilled water">Distilled water</option>
+                        <option value="Kerosene">Kerosene</option>
+                    </select>
+                </div>
+                <div class="wb" style="padding: 20px;">
+                  <label>Weight of empty beaker : </label>
+                  <span id="weightBeaker1"></span><br>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="insert" type="button" onclick="insert()" disabled>Start</button>
+                    <!-- <button id="remove" type="button" onclick="remove()" style="display:none;font-size: 12px;">Remove
+                        Probe</button> -->
+                </div>
+               
+                
+               
+                <div class="insert-reset-observation">
+                    <button id="observationbutton" type="button" onclick="openobservation()"
+                        disabled>Observations</button>
+                </div>
+                <div class="insert-reset-observation">
+                   
+                    <button id="finalresult" type="button" onclick="hallcovalue()" disabled>Show Result</button>
+                    <div class="observation3" id="observation3" style="position: absolute;left: 211px; top: 74px;">
+                    <div class="tablediv" id="tablediv3">
+                        <table class="observationTable" id="observationTable3">
+                            
+                                <tr>
+                                  <th rowspan="2">Liquid</th>
+                                  <th colspan="2">Weight of 20 drops (g)</th>
+                                  <th rowspan="2">(x2 - x1)g</th>
+                                  <th rowspan="2">Surface Tension (Dynes/cm)</th>
+                                </tr>
+                                <tr>
+                                  <th>Weight of empty beaker (x1)</th>
+                                 <th>Weight of empty beaker with liquid(x2)</th>
+                                 
+                                </tr>
+                                <tr>
+                                  <td>Water</td>
+                                  <td>48.20</td>
+                                  <td>53.8</td>
+                                  <td style="padding: 2px;">w1 = 5.6</td>
+                                  <td>&gamma;<sub>1</sub> = 72.8</td>
+                                </tr>
+                                <tr>
+                                    <td>Kerosene</td>
+                                    <td>48.20</td>
+                                    <td>50.123</td>
+                                    <td style="padding: 2px;">w1 = 1.923</td>
+                                    <td>&gamma;<sub>2</sub> = 25</td>
+                                  </tr>
+                            
+                        </table>
+                    </div>
+                    <!-- <div class="tableObservation" id="tableObservation">
+                        <button type="button" style="position: absolute; top: 182px; left: 294px;"   onclick="closeobservation()">Close</button>
+                        
+                    </div> -->
+                </div>
+                </div>
+                
+                
+                <div class="help">
+                    <button type="button" onclick="help()"><img src="images/help.png" alt="helpicon"></button>
+                </div>
+            </div>
+
+            <!-- simulation -->
+            <div class="mainsimulation" id="mainsimulation">
+                <span id="fieldvalue" style="display:none ;"></span>
+                <span id="voltagevalue" style="display:none ;"></span>
+                <p id="add">Added Successfully!</p>
+                <!-- <img class="circuit" id="circuit1" src="images/circuit1.png" alt="circuit1" style="display:none ;">
+                <img class="circuit" id="circuit2" src="images/circuit2.png" alt="circuit2" style="display:none ;">
+                <img class="circuit" id="circuit3" src="images/circuit3.png" alt="circuit3" style="display:none ;">
+                <img class="circuit" id="circuit4" src="images/circuit4.png" alt="circuit4" style="display:none ;">
+                <img id="probe" src="images/probe.png" alt="probe">
+                <img id="wire" src="images/wire.png" alt="wire">
+                <img id="hallprobe" src="images/hallprobe1.png" alt="hallprobe" style="display:none ;">
+                <img id="hallwire" src="images/wire.png" alt="hallwire" style="display:none ;"> -->
+                <img class="w1" id="1-1" src="images/wm1.png" alt="weighing balance" style="display:none;position: absolute;left: 302px; top: 299px;">
+                <div id="grad1" style="position: absolute; left: 663px; top:444px; text-align:left;  width:92px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+                <div id="grad21" style="position: absolute; left: 663px; top:444px; text-align:left;  width:105px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+
+                
+                <img class="w1" id="1-7" src="images/rubberStaglometer.png" alt="Stalagmometer" style="display:none;position: absolute;left: 587px; top: 242px; width: 26px;">
+                <img class="w1" id="1-8" src="images/rubberStaglometer1.png" alt="Stalagmometer" style="display:none;position: absolute;left: 698px; top: 242px; width: 26px;">
+                <img class="w1" id="2-8" src="images/rubberStaglometer21.png" alt="Stalagmometer" style="display:none;position: absolute;left: 698px; top: 242px; width: 26px;">
+
+                <img class="w1" id="1-2" src="images/beakerwithWater.png" alt="Distilled water" style="display:none;position: absolute;left: 670px; top: 362px;width: 70px;">
+                <img class="w1" id="2-7" src="images/rubberStaglometer.png" alt="Stalagmometer" style="display:none;position: absolute;left: 587px; top: 242px; width: 26px;">
+
+                
+                <img class="w1" id="1-3" src="images/beakerwithkerosen.png" alt="Kerosene" style="display:none;position: absolute;left: 670px; top: 337px; width: 70px;">
+                <img class="w1" id="1-4" src="images/beaker.png" alt="beaker" style="display:none;position: absolute;left: 583px; top: 362px; width: 70px;">
+                <p id="grm" style="display:none;position: absolute;left: 428px; top: 391px;">48.20</p>
+                <p id="grm1" style="display:none;position: absolute;left: 428px; top: 391px;">50</p>
+                <img class="w1" id="1-5" src="images/standWithClamp.png" alt="clamp" style="display:none;position: absolute;left: 246px; top: 160px; width: 199px;">
+                <!-- <img class="w1" id="1-5" src="images/standWithClamp.png" alt="clamp" style="display:none;position: absolute;left: 246px; top: 160px; width: 199px;"> -->
+
+                
+                <!-- <div id="paper" style="position: absolute; width: 50px; background-color: rgb(31, 28, 28); left: 55px; top: 55px;"></div> -->
+                <div id="grad111" style="position: absolute; left: 680px; top:397px; text-align:left;  width:53px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+
+                <div id="grad" style="position: absolute; left: 680px; top:397px; text-align:left;  width:53px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+                <div id="grad2" style="position: absolute; left: 663px; top:452px; text-align:left;  width:92px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+                <div id="grad222" style="position: absolute; left: 663px; top:447px; text-align:left;  width:92px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+                <img class="w1" id="2-6" src="images/bea.png" alt="Beaker" style="display:none;position: absolute;left: 645px; top: 347px; width: 134px;">
+                <img class="w1" id="1-15" src="images/drop1.png" alt="Drop" style="display:none;position: absolute;left: 347px; top: 417px; width: 10px;">
+                <img class="w1" id="1-16" src="images/drop11.png" alt="Drop" style="display:none;position: absolute;left: 347px; top: 417px; width: 10px;">
+                <!-- <img class="w1" id="1-17" src="images/drop1.png" alt="Drop" style="display:none;position: absolute;left: 347px; top: 417px; width: 10px;"> -->
+
+                <img class="w1" id="1-6" src="images/bea.png" alt="Beaker" style="display:none;position: absolute;left: 645px; top: 347px; width: 134px;">
+                <div id="grad4" style="position: absolute; left: 291px; top:331px; text-align:left;  width:130px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+                <div id="grad24" style="position: absolute; left: 291px; top:331px; text-align:left;  width:130px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+
+                <div id="grad5" style="position: absolute; left: 329px; top:450px; text-align:left;  width:20px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+                <div id="grad25" style="position: absolute; left: 329px; top:450px; text-align:left;  width:20px;color:#888888; visibility: hidden; rotate: 90deg;"></div>
+
+                <img class="w1" id="1-10" src="images/standBeaker.png" alt="clamp" style="display:none;position: absolute;left: 246px; top: 160px; width: 199px;">
+                <img class="w1" id="2-10" src="images/standBeaker.png" alt="clamp" style="display:none;position: absolute;left: 246px; top: 160px; width: 199px;">
+
+                <img class="w1" id="1-9" src="images/bea.png" alt="Beaker" style="display:none;position: absolute;left: 307px; top: 413px; width: 94px;">
+                <span
+                id="dialogue"
+                style="
+                  position: absolute;
+                  padding: 10px;
+                  border: 1px solid black;
+                  background-color: black;
+                  border-radius: 5px;
+                  left: 343px;
+                  top: 49px;
+                  width: 303px;
+                  visibility: hidden;
+                "
+              >
+                <p
+                  id="divi1"
+                  style="color: white; font-size: 15px; padding: 5px; margin-top: 0px"
+                >
+                  Note:- Allow 20 drops of liquid fall into the beaker.
+                </p>
+                <input
+                  type="button"
+                  style="
+                    cursor: pointer;
+                    border-radius: 5px;
+                    margin: 0auto;
+                    margin-left: -10px;
+                    margin-top: 0px;
+                  "
+                  id="ok1"
+                  value="OK"
+                  
+                />
+              </span>
+              <img class="w1" id="1-11" src="images/wm1.png" alt="weighing balance" style="display:none;position: absolute;left: 302px; top: 219px;">
+              <img class="w1" id="2-11" src="images/wm1.png" alt="weighing balance" style="display:none;position: absolute;left: 302px; top: 219px;">
+
+              <img class="w1" id="1-12" src="images/beakerwithWater2.png" alt="Beaker" style="display:none;position: absolute;left: 327px; top: 413px; width: 50px;">
+              <img class="w1" id="2-12" src="images/beakerwithKerosene1.png" alt="Beaker" style="display:none;position: absolute;left: 327px; top: 413px; width: 50px;">
+
+              <p id="grm2" style="display:none;position: absolute;left: 428px; top: 312px;">50.123</p>
+              
+              <!-- kerosene-->
+              <div class="insert-reset-observation">
+                <button id="reset" type="reset"  style="position: absolute; top: 280px;left: 40px;"  onclick="Refresh()">Reset</button>
+            </div>
+
+            </div>
+            <div id="instructions">
+                <div class="icontent">
+                    <h4>Instructions</h4>
+                    <ol>
+                        <li>Select the "Distilled water" from 'Select the experiment' dropdown menu.</li>
+                        <li>Find the weight of empty beaker in grams.</li>
+                        <li>Distilled water (reference liquid) is sucked into the stalagmometer (till point A) using a rubber bulb attached to the mouth of stalagmometer.
+                        </li>
+                        <li>Allow 20 drops of water to fall inside the beaker and again weigh the weight of the beaker with liquid.</li>
+                        <li>Click on the 'Observation' button to view the table.</li>
+                        <li>Change the procedure to "Kerosene" to calculate the dropping weight of kerosene.</li>
+                        <li>Click on the 'Start' button to start the experiment.</li>
+                        <li>Allow 20 drops of kerosene to fall inside the beaker and again weigh the weight of the beaker with liquid.</li>
+                        <li>Click on the 'Observation' button to view the table.</li>
+                        <li>Click on the 'Show Result' button to view the result.</li>
+                        
+                    </ol>
+                </div>
+                <button type="button" onclick="closeobservation()">Close</button>
+            </div>
+            <div id="IBgraph">
+                <div id="myChart"></div>
+                <button onclick="closeobservation()">Close</button>
+            </div>
+           
+            <div class="observation" id="observation">
+                <div class="tablediv" id="tablediv">
+                    <table class="observationTable" id="observationTable">
+                        
+                            <tr>
+                              <th rowspan="2">Liquid</th>
+                              <th colspan="2">Weight of 20 drops (g)</th>
+                              <th rowspan="2">(x2 - x1)g</th>
+                              
+                            </tr>
+                            <tr>
+                              <th>Weight of empty beaker (x1)</th>
+                             <th>Weight of empty beaker with liquid(x2)</th>
+                             
+                            </tr>
+                            <tr>
+                              <td>Water</td>
+                              <td>48.20</td>
+                              <td>53.8</td>
+                              <td style="padding: 2px;">w1 = 5.6</td>
+                        
+                            </tr>
+                        
+                    </table>
+                </div>
+                <div class="tableObservation" id="tableObservation">
+                    <button type="button" style="position: absolute; top: 182px; left: 294px;"   onclick="closeobservation()">Close</button>
+                    
+                </div>
+            </div>
+            <div class="observation" id="observation1">
+                <div class="tablediv" id="tablediv1">
+                    <table class="observationTable" id="observationTable1">
+                        
+                            <tr>
+                              <th rowspan="2">Liquid</th>
+                              <th colspan="2">Weight of 20 drops (g)</th>
+                              <th rowspan="2">(x2 - x1)g</th>
+                             
+                            </tr>
+                            <tr>
+                              <th>Weight of empty beaker (x1)</th>
+                             <th>Weight of empty beaker with liquid(x2)</th>
+                             
+                            </tr>
+                            <tr>
+                              <td>Kerosene</td>
+                              <td>48.20</td>
+                              <td>50.123</td>
+                              <td style="padding: 2px;">w1 = 1.923</td>
+                              
+                            </tr>
+                        
+                    </table>
+                </div>
+                <div class="tableObservation" id="tableObservation1">
+                    <button type="button" style="position: absolute; top: 182px; left: 294px;"   onclick="closeobservation()">Close</button>
+                    
+                </div>
+            </div>
+            <!-- ib table  -->
+            
+            <!-- images name  -->
+           
+        </div>
+        <button id="buttonup" onclick="up()"><img class="nextimg" src="images/arrow.png" alt="arrow"></button>
+        <button id="buttondown" onclick="down()"><img class="nextimg" src="images/arrow.png" alt="arrow"></button>
+
+        <!-- content3 -->
+        
+
+        <!-- next button -->
+        
+    </div>
+    <!-- <script src="js/data.js"></script> -->
+    <script src="js/script.js"></script>
+    <!-- <script src="js/main.js"></script> -->
 </body>
+
 </html>
