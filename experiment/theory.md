@@ -28,23 +28,4 @@ Where, W<sub>1</sub> and W<sub>2</sub> => Weights of liquids
 
 The apparatus used for determining surface tension of a liquid is known as stalagmometer. It resembles a pipette with a bulb in the middle and a mark A on the tube above the bulb. The lower portion is made up of a capillary with a flattened tip.
 
-<center><img width="30%" src="./images/capillary.png"/></center>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<center><img width="15%" src="./images/capillary.png"/></center>
