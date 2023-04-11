@@ -1,1 +1,1 @@
-### Aim of the experiment
+ To find the Surface tension of kerosene by drop weight method 
