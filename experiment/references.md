@@ -11,8 +11,7 @@
 <li>Mohanta GP. Physical Pharmacy Practical Text, Pharma Book Syndicate. 2006: 32-33.</li>
 </ol>
 </td>
-<td>Developer : Dr. Pruthviraj U | NITK
-    Developer : Dr. K V Gangadharan | NITK</br></br>
+<td>Developer : Dr. Ajith K M | NITK<br>Developer : Dr. K V Gangadharan | NITK</br></br>
 Contributors :
 <ul style="list-style-type: none;">
 <li>Prajna K | NITK</li>
