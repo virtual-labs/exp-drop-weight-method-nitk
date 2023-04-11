@@ -176,7 +176,7 @@ function insert() {
                             document.getElementById("dialogue").style.visibility = "visible";
                             document.getElementById("ok1").onclick = function () {
                                 document.getElementById("dialogue").style.visibility = "hidden";
-                            document.getElementById("grad4").style.animation="moveGrad 10s forwards";
+                            document.getElementById("grad4").style.animation="moveGrad 20s forwards";
                             document.getElementById("1-15").style.display = 'block';
                             document.getElementById("1-15").style.animation="moveDrop 1s forwards";
                             setTimeout(function(){
@@ -209,6 +209,8 @@ function insert() {
                                                             setTimeout(function(){
                                                                 document.getElementById("1-15").style.display = 'block';
                                                                 document.getElementById("1-15").style.animation="moveDrop10 1s forwards";
+                                                                document.getElementById("grad5").style.visibility = "visible";
+                                                                document.getElementById("grad5").style.animation="moveGrad1 20s forwards";
                                                                 setTimeout(function(){
                                                                     document.getElementById("1-15").style.display = 'block';
                                                                     document.getElementById("1-15").style.animation="moveDrop11 1s forwards";
@@ -241,8 +243,7 @@ function insert() {
                                                                                                         document.getElementById("1-15").style.animation="moveDrop20 1s forwards";
                             setTimeout(function(){
                                 document.getElementById("1-15").style.display = 'none';
-                                document.getElementById("grad5").style.visibility = "visible";
-                                document.getElementById("grad5").style.animation="moveGrad1 2s forwards";
+                               
                                 setTimeout(function(){
                                     document.getElementById("grad5").style.visibility = "hidden";
                                     document.getElementById("grad4").style.visibility = "hidden";
@@ -259,26 +260,26 @@ function insert() {
                                 },2000); 
                             },100);
                         
-                        },500); 
-                    },500); 
-                 },500); 
-               },500); 
-              },500); 
-             },500); 
-                        },500); 
-                    },500); 
-                 },500); 
-               },500); 
-              },500); 
-             },500); 
-                                       },500); 
-                                     },500); 
-                                  },500); 
-                                },500); 
-                               },500); 
-                              },500); 
-                            },500); 
-                           },500); 
+                        },1000); 
+                    },1000); 
+                 },1000); 
+               },1000); 
+              },1000); 
+             },1000); 
+                        },1000); 
+                    },1000); 
+                 },1000); 
+               },1000); 
+              },1000); 
+             },1000); 
+                                       },1000); 
+                                     },1000); 
+                                  },1000); 
+                                },1000); 
+                               },1000); 
+                              },1000); 
+                            },1000); 
+                           },1000); 
                            }
 
                         },2000); 
@@ -326,7 +327,7 @@ function insert() {
                             document.getElementById("dialogue").style.visibility = "visible";
                             document.getElementById("ok1").onclick = function () {
                                 document.getElementById("dialogue").style.visibility = "hidden";
-                            document.getElementById("grad24").style.animation="moveGrad24 10s forwards";
+                            document.getElementById("grad24").style.animation="moveGrad24 20s forwards";
                             document.getElementById("1-16").style.display = 'block';
                             document.getElementById("1-16").style.animation="moveDrop 1s forwards";
                             setTimeout(function(){
@@ -359,6 +360,8 @@ function insert() {
                                                             setTimeout(function(){
                                                                 document.getElementById("1-16").style.display = 'block';
                                                                 document.getElementById("1-16").style.animation="moveDrop10 1s forwards";
+                                                                document.getElementById("grad25").style.visibility = "visible";
+                                                                                    document.getElementById("grad25").style.animation="moveGrad1 20s forwards";
                                                                 setTimeout(function(){
                                                                     document.getElementById("1-16").style.display = 'block';
                                                                     document.getElementById("1-16").style.animation="moveDrop11 1s forwards";
@@ -374,6 +377,7 @@ function insert() {
                                                                                 setTimeout(function(){
                                                                                     document.getElementById("1-16").style.display = 'block';
                                                                                     document.getElementById("1-16").style.animation="moveDrop15 1s forwards";
+                                                                                    
                                                                                     setTimeout(function(){
                                                                                         document.getElementById("1-16").style.display = 'block';
                                                                                         document.getElementById("1-16").style.animation="moveDrop16 1s forwards";
@@ -393,8 +397,7 @@ function insert() {
                             setTimeout(function(){
                                 document.getElementById("1-16").style.display = 'none';
 
-                                document.getElementById("grad25").style.visibility = "visible";
-                                document.getElementById("grad25").style.animation="moveGrad1 2s forwards";
+                               
                                 setTimeout(function(){
                                     document.getElementById("grad25").style.visibility = "hidden";
                                     document.getElementById("grad24").style.visibility = "hidden";
@@ -407,29 +410,29 @@ function insert() {
                                         document.getElementById("observationbutton").disabled = false;
 
                                         // document.getElementById("observation").style.display = 'block';
-                                    },2000);
+                                    },500);
                                 },2000); 
                             },100);
-                        },500); 
-                    },500); 
-                 },500); 
-               },500); 
-              },500); 
-             },500); 
-                        },500); 
-                    },500); 
-                 },500); 
-               },500); 
-              },500); 
-             },500); 
-                                       },500); 
-                                     },500); 
-                                  },500); 
-                                },500); 
-                               },500); 
-                              },500); 
-                            },500); 
-                           },500); 
+                        },1000); 
+                    },1000); 
+                 },1000); 
+               },1000); 
+              },1000); 
+             },1000); 
+                        },1000); 
+                    },1000); 
+                 },1000); 
+               },1000); 
+              },1000); 
+             },1000); 
+                                       },1000); 
+                                     },1000); 
+                                  },1000); 
+                                },1000); 
+                               },1000); 
+                              },1000); 
+                            },1000); 
+                           },1000); 
                         
                         }
                         },2000);    

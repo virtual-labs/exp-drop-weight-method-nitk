@@ -2,37 +2,105 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": " At the critical temperature, the surface tension of the liquid",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Is zero",
+        "b": "Is infinity",
+        "c": "Is the same as that at the other temperature",
+        "d": "Cannot be determined"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
       "correctAnswer": "a",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "The surface tension of a liquid is independent of ",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "The temperature of the liquid",
+        "b": "The impurities present in the liquid",
+        "c": "The Nature of the liquid",
+        "d": "The Area of the liquid surface"
       },
       "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
       },
-      "correctAnswer": "c",
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Small droplets of a liquid are usually more spherical in shape than larger drops of the same liquid because ",
+      "answers": {
+        "a": "Force of surface tension is equal and opposite to the force of gravity.",
+        "b": "Force of surface tension predominates the force of gravity.",
+        "c": "Force of gravity predominates the force of surface tension.",
+        "d": "Force of gravity and force of surface tension act in the same direction and are equal."
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "When an impurity is added to a liquid, its surface tension",
+      "answers": {
+        "a": "Decreases",
+        "b": "Increases",
+        "c": "First increases and then decreases",
+        "d": "Remains the same"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "Which of the following is correct about surface tension ",
+      "answers": {
+        "a": "It is a scalar quantity",
+        "b": "It is a molecular phenomenon",
+        "c": "Its root cause is the electromagnetic forces",
+        "d": "All of the above"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "If drops and bubbles do not collapse under the effect of gravity, it indicates that ",
+      "answers": {
+        "a": "The pressure inside the drop is greater than outside",
+        "b": "The pressure inside the drop is lower than outside",
+        "c": "Surface tension is low",
+        "d": "Viscosity is large"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
       "difficulty": "beginner"
     }
   ]
