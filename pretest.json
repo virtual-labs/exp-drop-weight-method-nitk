@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "The rise of a liquid in a capillary tube is due to",
+      "answers": {
+        "a": "Viscosity",
+        "b": "Osmosis",
+        "c": "Diffusion",
+        "d": "Surface tension"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The apparatus used for the determination of surface tension of a liquid is ",
+      "answers": {
+        "a": "Oedometer",
+        "b": "Consolidometer",
+        "c": "Stalagmometer",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "On increasing the temperature, the surface tension of the liquid",
+      "answers": {
+        "a": "Increases",
+        "b": "Decreases",
+        "c": "Remains constant",
+        "d": "None of the above"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which type of fluids will have zero surface tension?",
+      "answers": {
+        "a": "Real fluids.",
+        "b": "Ideal fluids.",
+        "c": "Both ideal and real fluids.",
+        "d": "No fluids have zero surface tension."
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Surface tension of water at 25&deg;c is",
+      "answers": {
+        "a": "90 dynes/cm",
+        "b": "55 dynes/cm",
+        "c": "82.5 dynes/cm",
+        "d": "72.14 dynes/cm"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    }
+  ]
+}
