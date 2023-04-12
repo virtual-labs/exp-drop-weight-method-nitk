@@ -18,6 +18,5 @@
 | SNo. |      Name       | Institute |
 | :--: | :-------------: | :-------: |
 |  1   | Sibeesh Padiyoor      |   NITK    |
-|  2   | Muhammed Mansoor CB   |   NITK    |
-|  3   | Akshaya               |   NITK    |
-|  4   | Anusha B Salian       |   NITK    |
+|  2   | Akshaya               |   NITK    |
+|  3   | Anusha B Salian       |   NITK    |
