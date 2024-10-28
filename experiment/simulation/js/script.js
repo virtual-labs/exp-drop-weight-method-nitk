@@ -1,3 +1,144 @@
+
+
+const canvas = document.querySelector("#simscreen");
+// const taskTitle = document.querySelector(".task-title");
+
+
+// function displayDiv(ele) {
+//   const taskScreen = document.querySelectorAll(".task-screen");
+//   taskScreen.forEach((task) => {
+//     task.classList.add("hide");
+//   });
+//   if (ele.classList.contains("tool-objective")) {
+//     document.querySelector(".objective").classList.remove("hide");
+//     taskTitle.textContent = "Objective";
+//     document.getElementById("variables").style.display="none"
+//   }
+//   if (ele.classList.contains("tool-apparatus")) {
+//     document.querySelector(".apparatus").classList.remove("hide");
+//     taskTitle.textContent = "Apparatus";
+//      document.getElementById("variables").style.display="none"
+//   }
+//   if (ele.classList.contains("tool-practice")) {
+//     document.querySelector(".practice").classList.remove("hide");
+//     taskTitle.textContent = "Experiment";
+//      document.getElementById("variables").style.display="block"
+   
+//   }
+// }
+
+const taskTitle = document.querySelector(".task-title");
+const stepTitle = document.querySelector(".practice-step-info");
+const btnTop = document.querySelector(".btn-top");
+const radioButtons = document.querySelectorAll('input[name="navigation"]');
+const buttonBox = document.querySelector(".practice-step-button");
+function displayDiv(ele) {
+  const taskScreen = document.querySelectorAll(".task-screen");
+  taskScreen.forEach((task) => {
+    task.classList.add("hide");
+    
+
+  });
+  if (ele.classList.contains("tool-objective")) {
+    document.querySelector(".objective").classList.remove("hide");
+    taskTitle.textContent = "Objective";
+    // document.getElementById("Results").style.display = "none";
+    document.getElementById("variables").style.display = "none";
+    document.getElementById('instructions').style.display = 'none';
+    document.getElementsByClassName('observation')[0].style.display = 'none';
+
+    
+  
+  }
+  if (ele.classList.contains("tool-apparatus")) {
+    document.querySelector(".apparatus").classList.remove("hide");
+    taskTitle.textContent = "Apparatus";
+    // document.getElementById("Results").style.display = "none";
+    document.getElementById("variables").style.display = "none";
+    document.getElementById('instructions').style.display = 'none';
+    console.log("graphhidden")
+    document.getElementsByClassName('observation')[0].style.display = 'none';
+  }
+  if (ele.classList.contains("tool-help")) {
+    // document.querySelector(".help").classList.remove("hide");
+    taskTitle.textContent = "Help";
+    document.getElementById("instructions").style.display = "block";
+    // document.getElementById("Results").style.display = "none";
+    document.getElementById("variables").style.display = "none";
+    document.getElementsByClassName('observation')[0].style.display = 'none';
+  
+  }
+  if (ele.classList.contains("tool-practice")) {
+    // document.getElementById("Results").style.display = "none";
+    document.getElementById("variables").style.display = "block";
+    document.querySelector(".practice").classList.remove("hide");
+    // document.getElementById("help1").style.disable= "true";
+    taskTitle.textContent = "Experiment";
+    // document.getElementById("Results").style.display = "block";
+    // document.getElementById("variables").style.display = "block";
+  //   if (windowWidth <= 768) {
+  //     // $("#variables").css("display", "block");
+  //     $("#variables").css("width", "100%");
+  // } else {
+  //     // $("#variables").css("display", "block");
+  //     $("#variables").css("width", "200%");
+  // }
+    document.getElementById('instructions').style.display = 'none';
+    $(stepTitle).css("margin-left","5rem");
+ 
+// btnTop.classList.add("hide");
+
+    console.log("reched here")
+
+  
+    radioButtons.forEach(radio => {
+      radio.checked = false;
+    
+    
+  })
+
+  circle1 = new Path2D();
+
+$(".canvas").css("display","none");
+
+$(buttonBox).css("display","none");
+let selectedOption = document.querySelector('input[name="exp"]:checked');
+if (selectedOption) {
+  let option = selectedOption.value;
+if (option == "Distilled water") {
+  taskTitle.textContent = "Distilled water";
+  // Show only the variable section
+  // document.getElementById("Results").style.display = "none";
+  document.getElementById("variables").style.display = "block";
+}
+else if (option == "Kerosene") {
+  taskTitle.textContent = "Kerosene";
+  // Show both the variable and result sections
+  // document.getElementById("Results").style.display = "block";
+  document.getElementById("variables").style.display = "block";
+}
+}
+  }
+}
+
+
+function blurring() {
+  if (blurr == true) {
+    // document.getElementById("simoptions").style.filter = "blur(2px)";
+    document.getElementById("appdiv").style.filter = "blur(0px)";
+    // document.getElementById("buttondown").style.filter = "blur(2px)";
+  } else if (blurr == false) {
+    // document.getElementById("simoptions").style.filter = "blur(0px)";
+    document.getElementById("appdiv").style.filter = "blur(0px)";
+    // document.getElementById("content3").style.display = "none";
+    // document.getElementById("graph").style.display = "none";
+    // document.getElementById("buttondown").style.filter = "blur(0px)";
+  }
+  
+}
+
+// Next button
+// let a = 1;
 let b = 3.60;
 let hvoltage = 0;
 let magi = 200;
@@ -20,17 +161,17 @@ let ibrow;
 let rH = 0;
 let raisedtoTen;
 
-function blurring() {
-    if (blurr == true) {
-        document.getElementById("simoptions").style.filter = 'blur(2px)';
-        document.getElementById("mainsimulation").style.filter = 'blur(2px)';
-        document.getElementById("buttondown").style.filter = 'blur(2px)';
-    } else if (blurr == false) {
-        document.getElementById("simoptions").style.filter = 'blur(0px)';
-        document.getElementById("mainsimulation").style.filter = 'blur(0px)';
-        document.getElementById("buttondown").style.filter = 'blur(0px)';
-    }
-}
+// function blurring() {
+//     if (blurr == true) {
+//         document.getElementById("simoptions").style.filter = 'blur(2px)';
+//         document.getElementById("mainsimulation").style.filter = 'blur(2px)';
+//         document.getElementById("buttondown").style.filter = 'blur(2px)';
+//     } else if (blurr == false) {
+//         document.getElementById("simoptions").style.filter = 'blur(0px)';
+//         document.getElementById("mainsimulation").style.filter = 'blur(0px)';
+//         document.getElementById("buttondown").style.filter = 'blur(0px)';
+//     }
+// }
 
 // Next button
 let a = 1;
@@ -70,22 +211,34 @@ function next() {
 // procedure selection
 function update() {
    
-    let select = document.getElementById('exp');
-    let option = select.options[select.selectedIndex].value;
+ 
+
+
+  // Check if a radio button is selected
+//   let selectedOption = document.querySelector('input[name="exp"]:checked');
+//   if (!selectedOption) {
+//       alert("Please select an experiment option");
+//       return; // Exit the function if no option is selected
+//   }
+  let select = document.getElementById('exp');
+  let option = select.options[select.selectedIndex].value;
     if (option == 'Distilled water') {
+        console.log("1")
+    //   document.getElementById("procedure-title").style.display = 'none';
+    //   document.getElementById("proc").style.display = 'none';
         document.getElementById("insert").innerHTML = 'Start';
         // document.getElementById("remove").innerHTML = 'Start';
-        document.getElementById("1-1").style.display = 'block';
-        document.getElementById("1-2").style.display = 'block';
-        document.getElementById("1-3").style.display = 'none';
-        document.getElementById("2-11").style.display = 'none';
-        document.getElementById("2-12").style.display = 'none';
+        document.getElementById("a1-1").style.display = 'block';
+        document.getElementById("a1-2").style.display = 'block';
+        document.getElementById("a1-3").style.display = 'none';
+        document.getElementById("a2-11").style.display = 'none';
+        document.getElementById("a2-12").style.display = 'none';
         document.getElementById("grm2").style.display = 'none';
         document.getElementById("voltagevalue").style.display = 'none';
         document.getElementById("insert").disabled = true;
         // document.getElementById("electromagnet").style.display = 'block';
-        document.getElementById("1-4").style.display = 'block';
-        document.getElementById("1-4").style.animation="moveBeaker 2s forwards";
+        document.getElementById("a1-4").style.display = 'block';
+        document.getElementById("a1-4").style.animation="moveBeaker 2s forwards";
         setTimeout(function () {
             document.getElementById("grm").style.display = 'block'; 
             document.getElementById("weightBeaker1").innerHTML = '48.20 gm';
@@ -97,20 +250,21 @@ function update() {
         // disable();
         // remove();
     } else if (option == 'Kerosene') {
+    
         document.getElementById("observationbutton").disabled = true;
-        document.getElementById("1-11").style.display = 'none';
-        document.getElementById("1-12").style.display = 'none';
-        document.getElementById("1-6").style.display = 'none';
+        document.getElementById("a1-11").style.display = 'none';
+        document.getElementById("a1-12").style.display = 'none';
+        document.getElementById("a1-6").style.display = 'none';
         document.getElementById("grm2").style.display = 'none';
         document.getElementById("grad").style.display = 'none';
-        document.getElementById("1-1").style.display = 'block';
-        document.getElementById("1-2").style.display = 'none';
-        document.getElementById("1-3").style.display = 'block';
+        document.getElementById("a1-1").style.display = 'block';
+        document.getElementById("a1-2").style.display = 'none';
+        document.getElementById("a1-3").style.display = 'block';
         document.getElementById("insert").innerHTML = 'Start';
         // document.getElementById("remove").innerHTML = 'Start';
         document.getElementById("insert").disabled = true;
-        document.getElementById("1-4").style.display = 'block';
-        document.getElementById("1-4").style.animation="moveBeaker 2s forwards";
+        document.getElementById("a1-4").style.display = 'block';
+        document.getElementById("a1-4").style.animation="moveBeaker 2s forwards";
         setTimeout(function () {
             document.getElementById("grm").style.display = 'block'; 
             document.getElementById("weightBeaker1").innerHTML = '48.20 gm';
@@ -131,126 +285,126 @@ function update() {
 // sensor/probe button
 function insert() {
     document.getElementById("insert").disabled = true;
-    document.getElementById("1-1").style.display = 'none';
+    document.getElementById("a1-1").style.display = 'none';
     
     // document.getElementById("insert").style.display = 'none';
     document.getElementById("grm").style.display = 'none';
-    document.getElementById("1-2").style.display = 'none';
+    document.getElementById("a1-2").style.display = 'none';
     // document.getElementById("remove").style.display = 'block';
 
-    document.getElementById("1-3").style.display = 'none';
+    document.getElementById("a1-3").style.display = 'none';
     document.getElementById("observationbutton").disabled = true;
 
     // document.getElementById("cslider").style.opacity = '1';
     // document.getElementById("cslider").disabled = false;
 
     if (pcheck == true) {
-        // document.getElementById("1-6").style.display = 'block';
+        // document.getElementById("a1-6").style.display = 'block';
         
-        document.getElementById("1-7").style.display = 'block';
-        document.getElementById("1-6").style.display = 'block';
-        document.getElementById("grad").style.visibility = "visible";
-        document.getElementById("grad2").style.visibility = "visible";
-        document.getElementById("1-4").style.animation="moveBeaker1 2s forwards";
+        document.getElementById("a1-7").style.display = 'block';
+        document.getElementById("a1-6").style.display = 'block';
+        document.getElementById("grad").style.display='block';
+        document.getElementById("grad2").style.display='block';
+        document.getElementById("a1-4").style.animation="moveBeaker1 2s forwards";
         setTimeout(function(){
-            document.getElementById("1-7").style.animation="moveBurette 2s forwards"; 
+            document.getElementById("a1-7").style.animation="moveBurette 2s forwards"; 
             setTimeout(function(){
-                document.getElementById("grad1").style.visibility = "visible";
+                document.getElementById("grad1").style.display='block';
                 document.getElementById("grad1").style.animation="moveWater 2s forwards"; 
                 setTimeout(function(){
                     document.getElementById("grad").style.animation="moveWater1 2s forwards";  
                    
                     setTimeout(function(){
-                        document.getElementById("grad1").style.visibility = "hidden";
-                        document.getElementById("1-7").style.display = 'none';
-                        document.getElementById("1-8").style.display = 'block';
-                        document.getElementById("1-5").style.display = 'block';
-                        document.getElementById("1-8").style.animation="moveStalag 2s forwards";
+                        document.getElementById("grad1").style.display='none';
+                        document.getElementById("a1-7").style.display = 'none';
+                        document.getElementById("a1-8").style.display = 'block';
+                        document.getElementById("a1-5").style.display = 'block';
+                        document.getElementById("a1-8").style.animation="moveStalag 2s forwards";
                         setTimeout(function(){
-                            document.getElementById("1-4").style.display = 'none';
-                            // document.getElementById("1-9").style.display = 'block';
-                            document.getElementById("1-5").style.display = 'none';
-                            document.getElementById("1-8").style.display = 'none';
-                            document.getElementById("1-10").style.display = 'block';
-                            document.getElementById("grad4").style.visibility = "visible";
-                            document.getElementById("dialogue").style.visibility = "visible";
+                            document.getElementById("a1-4").style.display = 'none';
+                            // document.getElementById("a1-9").style.display = 'block';
+                            document.getElementById("a1-5").style.display = 'none';
+                            document.getElementById("a1-8").style.display = 'none';
+                            document.getElementById("a1-10").style.display = 'block';
+                            document.getElementById("grad4").style.display='block';
+                            document.getElementById("dialogue").style.display='block';
                             document.getElementById("ok1").onclick = function () {
-                                document.getElementById("dialogue").style.visibility = "hidden";
+                                document.getElementById("dialogue").style.display='none';
                             document.getElementById("grad4").style.animation="moveGrad 20s forwards";
-                            document.getElementById("1-15").style.display = 'block';
-                            document.getElementById("1-15").style.animation="moveDrop 1s forwards";
+                            document.getElementById("a1-15").style.display = 'block';
+                            document.getElementById("a1-15").style.animation="moveDrop 1s forwards";
                             setTimeout(function(){
-                            document.getElementById("1-15").style.display = 'block';
-                            document.getElementById("1-15").style.animation="moveDrop1 1s forwards";
+                            document.getElementById("a1-15").style.display = 'block';
+                            document.getElementById("a1-15").style.animation="moveDrop1 1s forwards";
                             setTimeout(function(){
-                                document.getElementById("1-15").style.display = 'block';
-                                document.getElementById("1-15").style.animation="moveDrop2 1s forwards";
+                                document.getElementById("a1-15").style.display = 'block';
+                                document.getElementById("a1-15").style.animation="moveDrop2 1s forwards";
                                 setTimeout(function(){
-                                    document.getElementById("1-15").style.display = 'block';
-                                    document.getElementById("1-15").style.animation="moveDrop3 1s forwards";
+                                    document.getElementById("a1-15").style.display = 'block';
+                                    document.getElementById("a1-15").style.animation="moveDrop3 1s forwards";
                                     setTimeout(function(){
-                                        document.getElementById("1-15").style.display = 'block';
-                                        document.getElementById("1-15").style.animation="moveDrop4 1s forwards";
+                                        document.getElementById("a1-15").style.display = 'block';
+                                        document.getElementById("a1-15").style.animation="moveDrop4 1s forwards";
                                         setTimeout(function(){
-                                            document.getElementById("1-15").style.display = 'block';
-                                            document.getElementById("1-15").style.animation="moveDrop5 1s forwards";
+                                            document.getElementById("a1-15").style.display = 'block';
+                                            document.getElementById("a1-15").style.animation="moveDrop5 1s forwards";
                                             setTimeout(function(){
-                                                document.getElementById("1-15").style.display = 'block';
-                                                document.getElementById("1-15").style.animation="moveDrop6 1s forwards";
+                                                document.getElementById("a1-15").style.display = 'block';
+                                                document.getElementById("a1-15").style.animation="moveDrop6 1s forwards";
                                                 setTimeout(function(){
-                                                    document.getElementById("1-15").style.display = 'block';
-                                                    document.getElementById("1-15").style.animation="moveDrop7 1s forwards";
+                                                    document.getElementById("a1-15").style.display = 'block';
+                                                    document.getElementById("a1-15").style.animation="moveDrop7 1s forwards";
                                                     setTimeout(function(){
-                                                        document.getElementById("1-15").style.display = 'block';
-                                                        document.getElementById("1-15").style.animation="moveDrop8 1s forwards";
+                                                        document.getElementById("a1-15").style.display = 'block';
+                                                        document.getElementById("a1-15").style.animation="moveDrop8 1s forwards";
                                                         setTimeout(function(){
-                                                            document.getElementById("1-15").style.display = 'block';
-                                                            document.getElementById("1-15").style.animation="moveDrop9 1s forwards";
+                                                            document.getElementById("a1-15").style.display = 'block';
+                                                            document.getElementById("a1-15").style.animation="moveDrop9 1s forwards";
                                                             setTimeout(function(){
-                                                                document.getElementById("1-15").style.display = 'block';
-                                                                document.getElementById("1-15").style.animation="moveDrop10 1s forwards";
-                                                                document.getElementById("grad5").style.visibility = "visible";
+                                                                document.getElementById("a1-15").style.display = 'block';
+                                                                document.getElementById("a1-15").style.animation="moveDrop10 1s forwards";
+                                                                document.getElementById("grad5").style.display='block';
                                                                 document.getElementById("grad5").style.animation="moveGrad1 20s forwards";
                                                                 setTimeout(function(){
-                                                                    document.getElementById("1-15").style.display = 'block';
-                                                                    document.getElementById("1-15").style.animation="moveDrop11 1s forwards";
+                                                                    document.getElementById("a1-15").style.display = 'block';
+                                                                    document.getElementById("a1-15").style.animation="moveDrop11 1s forwards";
                                                                     setTimeout(function(){
-                                                                        document.getElementById("1-15").style.display = 'block';
-                                                                        document.getElementById("1-15").style.animation="moveDrop12 1s forwards";
+                                                                        document.getElementById("a1-15").style.display = 'block';
+                                                                        document.getElementById("a1-15").style.animation="moveDrop12 1s forwards";
                                                                         setTimeout(function(){
-                                                                            document.getElementById("1-15").style.display = 'block';
-                                                                            document.getElementById("1-15").style.animation="moveDrop13 1s forwards";
+                                                                            document.getElementById("a1-15").style.display = 'block';
+                                                                            document.getElementById("a1-15").style.animation="moveDrop13 1s forwards";
                                                                             setTimeout(function(){
-                                                                                document.getElementById("1-15").style.display = 'block';
-                                                                                document.getElementById("1-15").style.animation="moveDrop14 1s forwards";
+                                                                                document.getElementById("a1-15").style.display = 'block';
+                                                                                document.getElementById("a1-15").style.animation="moveDrop14 1s forwards";
                                                                                 setTimeout(function(){
-                                                                                    document.getElementById("1-15").style.display = 'block';
-                                                                                    document.getElementById("1-15").style.animation="moveDrop15 1s forwards";
+                                                                                    document.getElementById("a1-15").style.display = 'block';
+                                                                                    document.getElementById("a1-15").style.animation="moveDrop15 1s forwards";
                                                                                     setTimeout(function(){
-                                                                                        document.getElementById("1-15").style.display = 'block';
-                                                                                        document.getElementById("1-15").style.animation="moveDrop16 1s forwards";
+                                                                                        document.getElementById("a1-15").style.display = 'block';
+                                                                                        document.getElementById("a1-15").style.animation="moveDrop16 1s forwards";
                                                                                         setTimeout(function(){
-                                                                                            document.getElementById("1-15").style.display = 'block';
-                                                                                            document.getElementById("1-15").style.animation="moveDrop17 1s forwards";
+                                                                                            document.getElementById("a1-15").style.display = 'block';
+                                                                                            document.getElementById("a1-15").style.animation="moveDrop17 1s forwards";
                                                                                             setTimeout(function(){
-                                                                                                document.getElementById("1-15").style.display = 'block';
-                                                                                                document.getElementById("1-15").style.animation="moveDrop18 1s forwards";
+                                                                                                document.getElementById("a1-15").style.display = 'block';
+                                                                                                document.getElementById("a1-15").style.animation="moveDrop18 1s forwards";
                                                                                                 setTimeout(function(){
-                                                                                                    document.getElementById("1-15").style.display = 'block';
-                                                                                                    document.getElementById("1-15").style.animation="moveDrop19 1s forwards";
+                                                                                                    document.getElementById("a1-15").style.display = 'block';
+                                                                                                    document.getElementById("a1-15").style.animation="moveDrop19 1s forwards";
                                                                                                     setTimeout(function(){
-                                                                                                        document.getElementById("1-15").style.display = 'block';
-                                                                                                        document.getElementById("1-15").style.animation="moveDrop20 1s forwards";
+                                                                                                        document.getElementById("a1-15").style.display = 'block';
+                                                                                                        document.getElementById("a1-15").style.animation="moveDrop20 1s forwards";
                             setTimeout(function(){
-                                document.getElementById("1-15").style.display = 'none';
+                                document.getElementById("a1-15").style.display = 'none';
                                
                                 setTimeout(function(){
-                                    document.getElementById("grad5").style.visibility = "hidden";
-                                    document.getElementById("grad4").style.visibility = "hidden";
-                                    document.getElementById("1-12").style.display = 'block';
-                                    document.getElementById("1-10").style.display = 'none';
-                                    document.getElementById("1-11").style.display = 'block';
-                                    document.getElementById("1-12").style.animation="moveDist 2s forwards";
+                                    document.getElementById("grad5").style.display='none';
+                                    document.getElementById("grad4").style.display='none';
+                                    document.getElementById("a1-12").style.display = 'block';
+                                    document.getElementById("a1-10").style.display = 'none';
+                                    document.getElementById("a1-11").style.display = 'block';
+                                    document.getElementById("a1-12").style.animation="moveDist 2s forwards";
                                     setTimeout(function(){
                                         document.getElementById("grm2").style.display = 'block';
                                         document.getElementById("observationbutton").disabled = false;
@@ -296,115 +450,115 @@ function insert() {
       
     } else if (pcheck == false) {
         
-        document.getElementById("2-7").style.display = 'block';
-        document.getElementById("2-6").style.display = 'block';
-        document.getElementById("grad111").style.visibility = "visible";
+        document.getElementById("a2-7").style.display = 'block';
+        document.getElementById("a2-6").style.display = 'block';
+        document.getElementById("grad111").style.display='block';
 
-        document.getElementById("grad222").style.visibility = "visible";
-        document.getElementById("1-4").style.animation="moveBeaker21 2s forwards";
+        document.getElementById("grad222").style.display='block';
+        document.getElementById("a1-4").style.animation="moveBeaker21 2s forwards";
         setTimeout(function(){
-            document.getElementById("2-7").style.animation="moveBurette21 2s forwards"; 
+            document.getElementById("a2-7").style.animation="moveBurette21 2s forwards"; 
             setTimeout(function(){
-                document.getElementById("grad21").style.visibility = "visible";
+                document.getElementById("grad21").style.display='block';
                 document.getElementById("grad21").style.animation="moveKerosene 2s forwards";
                 setTimeout(function(){
                     document.getElementById("grad111").style.animation="moveKerosene1 2s forwards";
                     setTimeout(function(){
-                        document.getElementById("grad21").style.visibility = "hidden";
-                        document.getElementById("2-7").style.display = 'none';
-                        document.getElementById("2-8").style.display = 'block';
-                        document.getElementById("1-5").style.display = 'block';
-                        document.getElementById("2-8").style.animation="moveStalag 2s forwards";
+                        document.getElementById("grad21").style.display='none';
+                        document.getElementById("a2-7").style.display = 'none';
+                        document.getElementById("a2-8").style.display = 'block';
+                        document.getElementById("a1-5").style.display = 'block';
+                        document.getElementById("a2-8").style.animation="moveStalag 2s forwards";
                         setTimeout(function(){
-                            document.getElementById("1-4").style.display = 'none';
+                            document.getElementById("a1-4").style.display = 'none';
 
-                            // document.getElementById("2-4").style.display = 'none';
-                            // document.getElementById("1-9").style.display = 'block';
-                            document.getElementById("1-5").style.display = 'none';
-                            document.getElementById("2-8").style.display = 'none';
-                            document.getElementById("2-10").style.display = 'block';
-                            document.getElementById("grad24").style.visibility = "visible";
-                            document.getElementById("dialogue").style.visibility = "visible";
+                            // document.getElementById("a2-4").style.display = 'none';
+                            // document.getElementById("a1-9").style.display = 'block';
+                            document.getElementById("a1-5").style.display = 'none';
+                            document.getElementById("a2-8").style.display = 'none';
+                            document.getElementById("a2-10").style.display = 'block';
+                            document.getElementById("grad24").style.display='block';
+                            document.getElementById("dialogue").style.display='block';
                             document.getElementById("ok1").onclick = function () {
-                                document.getElementById("dialogue").style.visibility = "hidden";
+                                document.getElementById("dialogue").style.display='none';
                             document.getElementById("grad24").style.animation="moveGrad24 20s forwards";
-                            document.getElementById("1-16").style.display = 'block';
-                            document.getElementById("1-16").style.animation="moveDrop 1s forwards";
+                            document.getElementById("a1-16").style.display = 'block';
+                            document.getElementById("a1-16").style.animation="moveDrop 1s forwards";
                             setTimeout(function(){
-                            document.getElementById("1-16").style.display = 'block';
-                            document.getElementById("1-16").style.animation="moveDrop1 1s forwards";
+                            document.getElementById("a1-16").style.display = 'block';
+                            document.getElementById("a1-16").style.animation="moveDrop1 1s forwards";
                             setTimeout(function(){
-                                document.getElementById("1-16").style.display = 'block';
-                                document.getElementById("1-16").style.animation="moveDrop2 1s forwards";
+                                document.getElementById("a1-16").style.display = 'block';
+                                document.getElementById("a1-16").style.animation="moveDrop2 1s forwards";
                                 setTimeout(function(){
-                                    document.getElementById("1-16").style.display = 'block';
-                                    document.getElementById("1-16").style.animation="moveDrop3 1s forwards";
+                                    document.getElementById("a1-16").style.display = 'block';
+                                    document.getElementById("a1-16").style.animation="moveDrop3 1s forwards";
                                     setTimeout(function(){
-                                        document.getElementById("1-16").style.display = 'block';
-                                        document.getElementById("1-16").style.animation="moveDrop4 1s forwards";
+                                        document.getElementById("a1-16").style.display = 'block';
+                                        document.getElementById("a1-16").style.animation="moveDrop4 1s forwards";
                                         setTimeout(function(){
-                                            document.getElementById("1-16").style.display = 'block';
-                                            document.getElementById("1-16").style.animation="moveDrop6 1s forwards";
+                                            document.getElementById("a1-16").style.display = 'block';
+                                            document.getElementById("a1-16").style.animation="moveDrop6 1s forwards";
                                             setTimeout(function(){
-                                                document.getElementById("1-16").style.display = 'block';
-                                                document.getElementById("1-16").style.animation="moveDrop6 1s forwards";
+                                                document.getElementById("a1-16").style.display = 'block';
+                                                document.getElementById("a1-16").style.animation="moveDrop6 1s forwards";
                                                 setTimeout(function(){
-                                                    document.getElementById("1-16").style.display = 'block';
-                                                    document.getElementById("1-16").style.animation="moveDrop7 1s forwards";
+                                                    document.getElementById("a1-16").style.display = 'block';
+                                                    document.getElementById("a1-16").style.animation="moveDrop7 1s forwards";
                                                     setTimeout(function(){
-                                                        document.getElementById("1-16").style.display = 'block';
-                                                        document.getElementById("1-16").style.animation="moveDrop8 1s forwards";
+                                                        document.getElementById("a1-16").style.display = 'block';
+                                                        document.getElementById("a1-16").style.animation="moveDrop8 1s forwards";
                                                         setTimeout(function(){
-                                                            document.getElementById("1-16").style.display = 'block';
-                                                            document.getElementById("1-16").style.animation="moveDrop9 1s forwards";
+                                                            document.getElementById("a1-16").style.display = 'block';
+                                                            document.getElementById("a1-16").style.animation="moveDrop9 1s forwards";
                                                             setTimeout(function(){
-                                                                document.getElementById("1-16").style.display = 'block';
-                                                                document.getElementById("1-16").style.animation="moveDrop10 1s forwards";
-                                                                document.getElementById("grad25").style.visibility = "visible";
+                                                                document.getElementById("a1-16").style.display = 'block';
+                                                                document.getElementById("a1-16").style.animation="moveDrop10 1s forwards";
+                                                                document.getElementById("grad25").style.display='block';
                                                                                     document.getElementById("grad25").style.animation="moveGrad1 20s forwards";
                                                                 setTimeout(function(){
-                                                                    document.getElementById("1-16").style.display = 'block';
-                                                                    document.getElementById("1-16").style.animation="moveDrop11 1s forwards";
+                                                                    document.getElementById("a1-16").style.display = 'block';
+                                                                    document.getElementById("a1-16").style.animation="moveDrop11 1s forwards";
                                                                     setTimeout(function(){
-                                                                        document.getElementById("1-16").style.display = 'block';
-                                                                        document.getElementById("1-16").style.animation="moveDrop12 1s forwards";
+                                                                        document.getElementById("a1-16").style.display = 'block';
+                                                                        document.getElementById("a1-16").style.animation="moveDrop12 1s forwards";
                                                                         setTimeout(function(){
-                                                                            document.getElementById("1-16").style.display = 'block';
-                                                                            document.getElementById("1-16").style.animation="moveDrop13 1s forwards";
+                                                                            document.getElementById("a1-16").style.display = 'block';
+                                                                            document.getElementById("a1-16").style.animation="moveDrop13 1s forwards";
                                                                             setTimeout(function(){
-                                                                                document.getElementById("1-16").style.display = 'block';
-                                                                                document.getElementById("1-16").style.animation="moveDrop14 1s forwards";
+                                                                                document.getElementById("a1-16").style.display = 'block';
+                                                                                document.getElementById("a1-16").style.animation="moveDrop14 1s forwards";
                                                                                 setTimeout(function(){
-                                                                                    document.getElementById("1-16").style.display = 'block';
-                                                                                    document.getElementById("1-16").style.animation="moveDrop15 1s forwards";
+                                                                                    document.getElementById("a1-16").style.display = 'block';
+                                                                                    document.getElementById("a1-16").style.animation="moveDrop15 1s forwards";
                                                                                     
                                                                                     setTimeout(function(){
-                                                                                        document.getElementById("1-16").style.display = 'block';
-                                                                                        document.getElementById("1-16").style.animation="moveDrop16 1s forwards";
+                                                                                        document.getElementById("a1-16").style.display = 'block';
+                                                                                        document.getElementById("a1-16").style.animation="moveDrop16 1s forwards";
                                                                                         setTimeout(function(){
-                                                                                            document.getElementById("1-16").style.display = 'block';
-                                                                                            document.getElementById("1-16").style.animation="moveDrop17 1s forwards";
+                                                                                            document.getElementById("a1-16").style.display = 'block';
+                                                                                            document.getElementById("a1-16").style.animation="moveDrop17 1s forwards";
                                                                                             setTimeout(function(){
-                                                                                                document.getElementById("1-16").style.display = 'block';
-                                                                                                document.getElementById("1-16").style.animation="moveDrop18 1s forwards";
+                                                                                                document.getElementById("a1-16").style.display = 'block';
+                                                                                                document.getElementById("a1-16").style.animation="moveDrop18 1s forwards";
                                                                                                 setTimeout(function(){
-                                                                                                    document.getElementById("1-16").style.display = 'block';
-                                                                                                    document.getElementById("1-16").style.animation="moveDrop19 1s forwards";
+                                                                                                    document.getElementById("a1-16").style.display = 'block';
+                                                                                                    document.getElementById("a1-16").style.animation="moveDrop19 1s forwards";
                                                                                                     setTimeout(function(){
-                                                                                                        document.getElementById("1-16").style.display = 'block';
-                                                                                                        document.getElementById("1-16").style.animation="moveDrop20 1s forwards";
+                                                                                                        document.getElementById("a1-16").style.display = 'block';
+                                                                                                        document.getElementById("a1-16").style.animation="moveDrop20 1s forwards";
                            
                             setTimeout(function(){
-                                document.getElementById("1-16").style.display = 'none';
+                                document.getElementById("a1-16").style.display = 'none';
 
                                
                                 setTimeout(function(){
-                                    document.getElementById("grad25").style.visibility = "hidden";
-                                    document.getElementById("grad24").style.visibility = "hidden";
-                                    document.getElementById("2-12").style.display = 'block';
-                                    document.getElementById("2-10").style.display = 'none';
-                                    document.getElementById("2-11").style.display = 'block';
-                                    document.getElementById("2-12").style.animation="moveDist1 2s forwards";
+                                    document.getElementById("grad25").style.display='none';
+                                    document.getElementById("grad24").style.display='none';
+                                    document.getElementById("a2-12").style.display = 'block';
+                                    document.getElementById("a2-10").style.display = 'none';
+                                    document.getElementById("a2-11").style.display = 'block';
+                                    document.getElementById("a2-12").style.animation="moveDist1 2s forwards";
                                     setTimeout(function(){
                                         document.getElementById("grm2").style.display = 'block';
                                         document.getElementById("observationbutton").disabled = false;
@@ -545,13 +699,13 @@ function openobservation() {
     if (pcheck == false) {
          document.getElementById("observation1").style.display = 'block';
        
-        document.getElementById('blocker').style.display = 'block';
+        // document.getElementById('blocker').style.display = 'block';
 
     } else if (pcheck == true) {
         document.getElementById("observation").style.display = 'block';
         // document.getElementById("insert").disabled = false;
-        // document.getElementById("IBobservation").style.display = 'block';
-        document.getElementById('blocker').style.display = 'block';
+      
+        // document.getElementById('blocker').style.display = 'block';
        
     }
     blurr = true;
@@ -562,22 +716,22 @@ function openobservation() {
 function closeobservation() {
     if (pcheck == false) {
         document.getElementById("observation1").style.display = 'none';
-        document.getElementById('blocker').style.display = 'block';
+        // document.getElementById('blocker').style.display = 'block';
         document.getElementById("finalresult").disabled = false;
 
     } else if (pcheck == true) {
         document.getElementById("observation").style.display = 'none';
-        document.getElementById('blocker').style.display = 'block';
+        // document.getElementById('blocker').style.display = 'block';
         document.getElementById("exp").disabled = false;
     }
     blurr = false;
     blurring();
-    document.getElementById('IBgraph').style.display = 'none';
-    document.getElementById('blocker').style.display = 'none';
-    document.getElementById('myChart').style.display = 'none';
+    // document.getElementById('IBgraph').style.display = 'none';
+    // document.getElementById('blocker').style.display = 'none';
+    // document.getElementById('myChart').style.display = 'none';
     document.getElementById('instructions').style.display = 'none';
    
-    // document.getElementById("finalresult").disabled = false;
+    document.getElementById("finalresult").disabled = false;
 }
 function Refresh() {
     window.location = window.location.href;
@@ -589,7 +743,7 @@ function Refresh() {
 let checkCount = 0;
 function checkClicked(evt) {
     // checkCount += evt.target.checked == true ? 1 : -1;
-    document.getElementById("finalresult").disable =
+    document.getElementById("finalresult").disabled =
       option == 2 ? "false" : "true";
   }
 
@@ -620,20 +774,20 @@ function clearing() {
 }
 
 function timer() {
-    document.getElementById('add').style.display = 'none';
+    // document.getElementById('add').style.display = 'none';
 }
 
 
 function help() {
     document.getElementById('instructions').style.display = 'block';
-    document.getElementById('blocker').style.display = 'block';
+    // document.getElementById('blocker').style.display = 'block';
 }
 
 function hallcovalue(){
-    document.getElementById('2-12').style.display = 'none';
-    document.getElementById('2-11').style.display = 'none';
+    document.getElementById('a2-12').style.display = 'none';
+    document.getElementById('a2-11').style.display = 'none';
     document.getElementById('grm2').style.display = 'none';
-    document.getElementById('2-6').style.display = 'none';
+    document.getElementById('a2-6').style.display = 'none';
     document.getElementById('grad111').style.display = 'none';
     // document.getElementById('blocker').style.display = 'block';
     document.getElementById("observation3").style.display = 'block';
