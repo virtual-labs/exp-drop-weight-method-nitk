@@ -14,21 +14,20 @@ em:current font size
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(0.70);
-  margin-left: -67px;
+    transform: scale(0.7);
+    margin-left: -67px;
   }
-  #timerbox{
+  #timerbox {
     position: absolute;
     top: 81%;
     left: 111%;
     z-index: 101;
-
   }
   #appdiv {
     display: flex;
     align-items: center;
     justify-content: center;
-    transform: scale(0.80);
+    transform: scale(0.8);
     /* margin-left: -170px; */
   }
   /* #image_container {
@@ -40,29 +39,28 @@ em:current font size
   } */
   .text {
     left: 14%;
-        top: 6%;
-        position: absolute;
-        font-size: 2rem;
-   }
-   label,
-   select,
-   input {
-     display: inline-block;
-     font-size: 1.6rem;
-   }
-   p {
+    top: 6%;
+    position: absolute;
+    font-size: 2rem;
+  }
+  label,
+  select,
+  input {
+    display: inline-block;
+    font-size: 1.6rem;
+  }
+  p {
     display: inline-block;
     font-size: 1.5rem;
   }
-   #timerbox{
+  #timerbox {
     position: absolute;
     top: 79%;
     left: 108%;
     z-index: 101;
     font-size: 2em;
-
   }
-  
+
   /* .footer {
     margin-top: 50px;
   } */
@@ -76,10 +74,6 @@ em:current font size
 /* **************************** */
 
 @media (max-width: 75em) {
-  body {
-    width: 100%;
-    margin: unset;
-  }
   .title-div h1 {
     font-size: 2.5rem;
   }
@@ -126,27 +120,26 @@ em:current font size
     transform: scale(1.1);
     margin-left: 19px;
   } */
-  #timerbox{
+  #timerbox {
     position: absolute;
     top: 81%;
     left: 111%;
     z-index: 101;
     font-size: 2em;
-
   }
   .text {
     left: 14%;
-        top: 6%;
-        position: absolute;
-        font-size: 2rem;
-   }
-   label,
-   select,
-   input{
-     display: inline-block;
-     font-size: 1.5rem;
-   }
-   p {
+    top: 6%;
+    position: absolute;
+    font-size: 2rem;
+  }
+  label,
+  select,
+  input {
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+  p {
     display: inline-block;
     font-size: 1.5rem;
   }
@@ -160,6 +153,10 @@ em:current font size
 /* **************************** */
 
 @media (max-width: 59em) {
+  body {
+    width: 100%;
+    margin: 0;
+  }
   .tool-link:link,
   .tool-link:visited {
     gap: 0.5rem;
@@ -168,14 +165,14 @@ em:current font size
   }
   label,
   select,
-  input{
+  input {
     display: inline-block;
     font-size: 1.5rem;
   }
   p {
-   display: inline-block;
-   font-size: 1.5rem;
- }
+    display: inline-block;
+    font-size: 1.5rem;
+  }
   .title-div h1 {
     font-size: 2rem;
   }
@@ -191,6 +188,10 @@ em:current font size
     justify-content: space-evenly;
     border-radius: 0;
     scroll-behavior: auto;
+    margin: 0;
+  }
+  .main {
+    grid-column: 1/-1;
   }
   .tool-menu {
     list-style: none;
@@ -290,7 +291,7 @@ em:current font size
     transform: scale(1.1);
     margin-left: 19px;
   } */
-  #timerbox{
+  #timerbox {
     top: 81%;
     left: 110%;
     z-index: 101;
@@ -301,17 +302,16 @@ em:current font size
   }
   .text {
     left: 14%;
-        top: 6%;
-        position: absolute;
-        font-size: 1.8rem;
-   }
-   #appdiv {
+    top: 6%;
+    position: absolute;
+    font-size: 1.8rem;
+  }
+  #appdiv {
     display: flex;
     align-items: center;
     justify-content: center;
     transform: scale(0.9);
     margin-left: -41px;
-
   }
 }
 
@@ -334,14 +334,14 @@ em:current font size
   }
   label,
   select,
-  input{
+  input {
     display: inline-block;
     font-size: 1.5rem;
   }
   p {
-   display: inline-block;
-   font-size: 1.5rem;
- }
+    display: inline-block;
+    font-size: 1.5rem;
+  }
   .tool-list span {
     font-size: 1.6rem;
   }
@@ -352,7 +352,7 @@ em:current font size
     transform: scale(0.92);
     margin-left: 19px;
   } */
-  #timerbox{
+  #timerbox {
     top: 81%;
     left: 110%;
     z-index: 101;
@@ -365,14 +365,13 @@ em:current font size
     top: -4%;
     position: absolute;
     font-size: 2.2rem;
-   }
-   #appdiv {
+  }
+  #appdiv {
     display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: scale(0.85);
-        margin-left: -68px;
-
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.85);
+    margin-left: -68px;
   }
 }
 
@@ -400,14 +399,14 @@ em:current font size
   }
   label,
   select,
-  input{
+  input {
     display: inline-block;
     font-size: 1.5rem;
   }
   p {
-   display: inline-block;
-   font-size: 1.5rem;
- }
+    display: inline-block;
+    font-size: 1.5rem;
+  }
   .main__task-div:nth-child(4) {
     margin-bottom: 6rem;
   }
@@ -433,7 +432,7 @@ em:current font size
   .footer {
     margin-bottom: 74px;
   }
-  #timerbox{
+  #timerbox {
     top: 81%;
     left: 110%;
     z-index: 101;
@@ -443,16 +442,15 @@ em:current font size
     top: -17%;
     position: absolute;
     font-size: 2.5rem;
-   }
-   #appdiv {
-    display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: scale(0.64);
-        margin-left: -144px;
-
   }
-  #observation3{
+  #appdiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.64);
+    margin-left: -144px;
+  }
+  #observation3 {
     transform: scale(1);
     margin-left: 63px;
   }
@@ -462,9 +460,9 @@ em:current font size
 /* Below 540px (Smaller Tablets) */
 /* **************************** */
 @media (max-width: 34em) {
-  .container {
+  /* .container {
     gap: 1rem;
-  }
+  } */
   .objective {
     padding: 9rem;
   }
@@ -474,7 +472,7 @@ em:current font size
     font-size: 1.6rem;
     /* text-align: center; */
   }
-  #scaling{
+  #scaling {
     display: flex;
     transform: scale(1);
     align-items: center;
@@ -506,14 +504,14 @@ em:current font size
   }
   label,
   select,
-  input{
+  input {
     display: inline-block;
     font-size: 1.5rem;
   }
   p {
-   display: inline-block;
-   font-size: 1.5rem;
- }
+    display: inline-block;
+    font-size: 1.5rem;
+  }
   .main {
     gap: 0.5rem;
   }
@@ -550,7 +548,7 @@ em:current font size
   .footer {
     margin-bottom: 65px;
   }
-  #timerbox{
+  #timerbox {
     top: 81%;
     left: 110%;
     z-index: 101;
@@ -560,20 +558,19 @@ em:current font size
     top: -17%;
     position: absolute;
     font-size: 3rem;
-   }
-   #appdiv {
+  }
+  #appdiv {
     display: flex;
     align-items: center;
     justify-content: center;
     transform: scale(0.5);
     margin-left: -192px;
-
   }
-  .observation{
+  .observation {
     transform: scale(1.18);
     /* margin-left: -54px; */
   }
-  #observation3{
+  #observation3 {
     transform: scale(1);
     margin-left: 63px;
   }
@@ -581,7 +578,7 @@ em:current font size
     grid-template-columns: 2fr 2fr;
     gap: 2rem;
   }
-  .divi1{
+  .divi1 {
     font-size: 24px;
   }
 }
@@ -600,14 +597,14 @@ em:current font size
     border-radius: 0;
     scroll-behavior: auto;
   }
-  .divi1{
+  .divi1 {
     font-size: 24px;
   }
-  .observation{
+  .observation {
     transform: scale(1);
     /* margin-left: -79px; */
   }
-  #observation3{
+  #observation3 {
     transform: scale(0.98);
     margin-left: 6px;
   }
@@ -621,7 +618,7 @@ em:current font size
     justify-content: space-evenly;
     padding: 1rem;
   }
-  
+
   .canvas__div {
     min-height: calc(101vh - 7 * 3.6rem);
   }
@@ -663,7 +660,7 @@ em:current font size
    
     margin-left: -30px;
   } */
-  #timerbox{
+  #timerbox {
     top: 81%;
     left: 110%;
     z-index: 101;
@@ -673,27 +670,25 @@ em:current font size
     top: -17%;
     position: absolute;
     font-size: 3rem;
-   }
-   label,
-   select,
-   input{
-     display: inline-block;
-     font-size: 1.5rem;
-   }
-   p {
+  }
+  label,
+  select,
+  input {
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+  p {
     display: inline-block;
     font-size: 1.5rem;
   }
   #appdiv {
     display: flex;
-        align-items: center;
-        justify-content: center;
-        transform: scale(0.42);
-        margin-left: -242px;
-        top: 85px!important;
-
+    align-items: center;
+    justify-content: center;
+    transform: scale(0.42);
+    margin-left: -242px;
+    top: 85px !important;
   }
-  
 }
 
 @media (max-width: 20em) {
