@@ -5,10 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SOLVE</title>
-    
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
@@ -34,188 +37,295 @@
       type="text/javascript"
       src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"
     ></script>
-
   </head>
   <body>
-    <div class="title-div-container">
-      <div class="title-div">
+    <div class="container">
+      <div class="title-div-container">
+        <div class="title-div">
           <div class="logo-div">
-            <a href="#"><img src="images/logo_nitk.png" alt="Logo" class="logo" /></a>
+            <a href="#"
+              ><img src="images/logo_nitk.png" alt="Logo" class="logo"
+            /></a>
           </div>
-          <h1>Surface Tension of water and kerosine by drop weight method
-          </h1>
+          <h1>Surface Tension of water and kerosine by drop weight method</h1>
         </div>
       </div>
-    <div class="container">
       <div class="sidebar">
         <ul class="tool-menu">
           <li class="tool-list tool-objective" onclick="displayDiv(this)">
-            <a class="tool-link" title="Objective"
-              >
-              <img src="./images/objective.png" alt="Objective" class="icons">
+            <a class="tool-link" title="Objective">
+              <img src="./images/objective.png" alt="Objective" class="icons" />
             </a>
             <span>Objective</span>
           </li>
           <li class="tool-list tool-apparatus" onclick="displayDiv(this)">
             <a class="tool-link" title="Apparatus"
-              ><img src="./images/apparatus.png" alt="Objective" class="icons"></a
-              >
-              <span>Apparatus</span>
+              ><img src="./images/apparatus.png" alt="Objective" class="icons"
+            /></a>
+            <span>Apparatus</span>
           </li>
-          
+
           <li class="tool-list tool-practice" onclick="displayDiv(this)">
             <a class="tool-link" title="Experiment"
               ><img src="./images/solution.png" alt="solution" class="icons"
-              ></a
-              >
-              <span>Experiment</span>
+            /></a>
+            <span>Experiment</span>
           </li>
           <li class="tool-list tool-help" onclick="displayDiv(this)">
             <a class="tool-link" title="Help" onclick="help()"
               ><img src="./images/help1.png" alt="Help" class="icons"
-              ></a
-              >
-              <span>Help</span>
+            /></a>
+            <span>Help</span>
           </li>
-          
-          <li id="buttondown" onclick="down()" class="tool-list tool-practice" onclick="displayDiv(this)">
+
+          <li
+            id="buttondown"
+            onclick="down()"
+            class="tool-list tool-practice"
+            onclick="displayDiv(this)"
+          >
             <a class="tool-link" title="back"
               ><img src="images/arrow.png" alt="back" class="icons"
-              ></a
-              >
-              <span>nextimg</span>
+            /></a>
+            <span>nextimg</span>
           </li>
         </ul>
-      </div> 
+      </div>
       <div class="main">
         <div class="main-section">
           <div id="simulation" class="main__task-div">
-            <h3 class="task-title">Objective</h3>
-           
+            <h3 class="task-title">
+              <span class="task-title--text">Objective</span>
+              <span class="sim-icons hide">
+                <img
+                  src="./images/controls-wt.png"
+                  alt="controls"
+                  title="Controls"
+                  class="sim-icon sim-icon--control"
+                />
+              </span>
+            </h3>
+
             <div class="canvas__div">
               <div class="task-screen objective">
                 <!-- <h3 class="objective__title">Objective</h3> -->
-                <p class="objective__main"> To find the surface tension of kerosene by dropweight method.
-
+                <p class="objective__main">
+                  To find the surface tension of kerosene by dropweight method.
                 </p>
-               <div></div>
+                <div></div>
 
-               <!-- <div></div><div></div><div></div> -->
+                <!-- <div></div><div></div><div></div> -->
               </div>
               <div class="task-screen apparatus hide">
                 <!-- <h3 class="apparatus__title">Apparatus</h3> -->
                 <div class="apparatus-screen">
                   <div class="apparatus-tool">
                     <img
-                    src="images/rubberbulb.png" alt="Rubber balloon"
+                      src="images/rubberbulb.png"
+                      alt="Rubber balloon"
                       class="tool-img diode img1"
                     />
                     <span>Transistor</span>
                   </div>
                   <div class="apparatus-tool">
                     <img
-                    src="images/beakerwithWater.png" alt="Distilled water"
+                      src="images/beakerwithWater.png"
+                      alt="Distilled water"
                       class="tool-img capacitor img2"
                     />
                     <span>Capacitor</span>
                   </div>
                   <div class="apparatus-tool">
                     <img
-                    src="images/beakerwithkerosen.png" alt="Kerosene"
+                      src="images/beakerwithkerosen.png"
+                      alt="Kerosene"
                       class="tool-img resistor img3"
                     />
                     <span>Resistor</span>
                   </div>
                   <div class="apparatus-tool">
                     <img
-                    src="images/stalaglomtr.png" alt="Stalagmometer"
+                      src="images/stalaglomtr.png"
+                      alt="Stalagmometer"
                       class="tool-img opamp img4"
                     />
                     <span>Opamp</span>
                   </div>
                   <div class="apparatus-tool">
                     <img
-                    src="images/standWithClamp.png" alt="Stand with clamp"
+                      src="images/standWithClamp.png"
+                      alt="Stand with clamp"
                       class="tool-img scope img5"
                     />
                     <span>Oscilloscope</span>
                   </div>
                   <div class="apparatus-tool">
                     <img
-                    src="images/wm1.png" alt="Weighing balance"
+                      src="images/wm1.png"
+                      alt="Weighing balance"
                       class="tool-img board img6"
                     />
                     <span>Breadboard</span>
                   </div>
                 </div>
               </div>
-              
+
               <div class="task-screen practice hide">
-               
                 <!-- <div id="image_container" > -->
                 <div class="mainsimulation" id="mainsimulation">
                   <div id="appdiv">
-                    <span id="fieldvalue" style="display:none ;"></span>
-                    <span id="voltagevalue" style="display:none ;"></span>
-                    <p id="add" style="display: none;">Added Successfully!</p>
-                    <img class="w1 a-1" id="a1-1" src="images/wm1.png" alt="weighing balance" style="display: block;">
+                    <span id="fieldvalue" style="display: none"></span>
+                    <span id="voltagevalue" style="display: none"></span>
+                    <p id="add" style="display: none">Added Successfully!</p>
+                    <img
+                      class="w1 a-1"
+                      id="a1-1"
+                      src="images/wm1.png"
+                      alt="weighing balance"
+                      style="display: block"
+                    />
                     <div id="grad1" class="grad1"></div>
                     <div id="grad21" class="grad21"></div>
-                    <img class="w1 a1-7" id="a1-7" src="images/rubberStaglometer.png" alt="Stalagmometer">
-                    <img class="w1 a1-8" id="a1-8" src="images/rubberStaglometer1.png" alt="Stalagmometer">
-                    <img class="w1 a2-8" id="a2-8" src="images/rubberStaglometer21.png" alt="Stalagmometer">
-                                        
-                    <img class="w1 a1-2" id="a1-2" src="images/beakerwithWater.png" alt="Distilled water">
-                    <img class="w1 a2-7" id="a2-7" src="images/rubberStaglometer.png" alt="Stalagmometer">
-                    
-                    
-                    
-                    <img class="w1 a1-3" id="a1-3" src="images/beakerwithkerosen.png" alt="Kerosene">
-                    <img class="w1 a1-4" id="a1-4" src="images/beaker.png" alt="beaker">
+                    <img
+                      class="w1 a1-7"
+                      id="a1-7"
+                      src="images/rubberStaglometer.png"
+                      alt="Stalagmometer"
+                    />
+                    <img
+                      class="w1 a1-8"
+                      id="a1-8"
+                      src="images/rubberStaglometer1.png"
+                      alt="Stalagmometer"
+                    />
+                    <img
+                      class="w1 a2-8"
+                      id="a2-8"
+                      src="images/rubberStaglometer21.png"
+                      alt="Stalagmometer"
+                    />
+
+                    <img
+                      class="w1 a1-2"
+                      id="a1-2"
+                      src="images/beakerwithWater.png"
+                      alt="Distilled water"
+                    />
+                    <img
+                      class="w1 a2-7"
+                      id="a2-7"
+                      src="images/rubberStaglometer.png"
+                      alt="Stalagmometer"
+                    />
+
+                    <img
+                      class="w1 a1-3"
+                      id="a1-3"
+                      src="images/beakerwithkerosen.png"
+                      alt="Kerosene"
+                    />
+                    <img
+                      class="w1 a1-4"
+                      id="a1-4"
+                      src="images/beaker.png"
+                      alt="beaker"
+                    />
                     <p id="grm" class="grm">48.20</p>
                     <p id="grm1" class="grm1">50</p>
-                    <img class="w1 a1-5" id="a1-5" src="images/standWithClamp.png" alt="clamp">
-                                        
-                    
+                    <img
+                      class="w1 a1-5"
+                      id="a1-5"
+                      src="images/standWithClamp.png"
+                      alt="clamp"
+                    />
+
                     <div id="grad111" class="grad111"></div>
                     <div id="grad" class="grad"></div>
                     <div id="grad2" class="grad2"></div>
                     <div id="grad222" class="grad222"></div>
-                    <img class="w1 a2-6" id="a2-6" src="images/bea.png" alt="Beaker">
-                    <img class="w1 a1-15" id="a1-15" src="images/drop1.png" alt="Drop">
-                    <img class="w1 a1-16" id="a1-16" src="images/drop11.png" alt="Drop">
-                    
-                    
-                    
-                    
-                    <img class="w1 a1-6" id="a1-6" src="images/bea.png" alt="Beaker">
+                    <img
+                      class="w1 a2-6"
+                      id="a2-6"
+                      src="images/bea.png"
+                      alt="Beaker"
+                    />
+                    <img
+                      class="w1 a1-15"
+                      id="a1-15"
+                      src="images/drop1.png"
+                      alt="Drop"
+                    />
+                    <img
+                      class="w1 a1-16"
+                      id="a1-16"
+                      src="images/drop11.png"
+                      alt="Drop"
+                    />
+
+                    <img
+                      class="w1 a1-6"
+                      id="a1-6"
+                      src="images/bea.png"
+                      alt="Beaker"
+                    />
                     <div id="grad4" class="grad4"></div>
                     <div id="grad24" class="grad24"></div>
                     <div id="grad5" class="grad5"></div>
                     <div id="grad25" class="grad25"></div>
-                    <img class="w1 a1-10" id="a1-10" src="images/standBeaker.png" alt="clamp">
-                    <img class="w1 a2-10" id="a2-10" src="images/standBeaker.png" alt="clamp">
-                    
-                    <img class="w1 a1-9" id="a1-9" src="images/bea.png" alt="Beaker">
+                    <img
+                      class="w1 a1-10"
+                      id="a1-10"
+                      src="images/standBeaker.png"
+                      alt="clamp"
+                    />
+                    <img
+                      class="w1 a2-10"
+                      id="a2-10"
+                      src="images/standBeaker.png"
+                      alt="clamp"
+                    />
+
+                    <img
+                      class="w1 a1-9"
+                      id="a1-9"
+                      src="images/bea.png"
+                      alt="Beaker"
+                    />
                     <span id="dialogue" class="dialogue">
-                      <p id="divi1" class="divi1">Note:- Allow 20 drops of liquid fall into the beaker.</p>
-                    <input type="button" id="ok1" value="OK" class="ok1">
-                    
+                      <p id="divi1" class="divi1">
+                        Note:- Allow 20 drops of liquid fall into the beaker.
+                      </p>
+                      <input type="button" id="ok1" value="OK" class="ok1" />
                     </span>
-                    <img class="w1 a1-11" id="a1-11" src="images/wm1.png" alt="weighing balance">
-                    <img class="w1 a2-11" id="a2-11" src="images/wm1.png" alt="weighing balance">
-                    <img class="w1 a1-12" id="a1-12" src="images/beakerwithWater2.png" alt="Beaker">
-                    <img class="w1 a2-12" id="a2-12" src="images/beakerwithKerosene1.png" alt="Beaker">
+                    <img
+                      class="w1 a1-11"
+                      id="a1-11"
+                      src="images/wm1.png"
+                      alt="weighing balance"
+                    />
+                    <img
+                      class="w1 a2-11"
+                      id="a2-11"
+                      src="images/wm1.png"
+                      alt="weighing balance"
+                    />
+                    <img
+                      class="w1 a1-12"
+                      id="a1-12"
+                      src="images/beakerwithWater2.png"
+                      alt="Beaker"
+                    />
+                    <img
+                      class="w1 a2-12"
+                      id="a2-12"
+                      src="images/beakerwithKerosene1.png"
+                      alt="Beaker"
+                    />
                     <p id="grm2" class="grm2">50.123</p>
-                    
-                                       
-                                       
-                                        <div id="myDiv"></div>
 
+                    <div id="myDiv"></div>
 
-
-
-                                        <!-- <div id="observation" class="observation">
+                    <!-- <div id="observation" class="observation">
                                           <table id="obstable" class="obstable">
                                           <tr>
                                           <th>Frequency (HZ)</th>
@@ -229,184 +339,215 @@
                                             <button class="obs-button" id="graphplotted" style="display:none;" onClick="plotted()">V/n^-2 GRAPH</button>
                                           </div>
                                           </div> -->
-                                       
-                                        <div class="observation" id="observation">
-                                          <!-- <div class="tablediv" id="tablediv"> -->
-                                              <table class="observationTable" id="observationTable">
-                                                  
-                                                      <tr>
-                                                        <th rowspan="2">Liquid</th>
-                                                        <th colspan="2">Weight of 20 drops (g)</th>
-                                                        <th rowspan="2">(x2 - x1)g</th>
-                                                        
-                                                      </tr>
-                                                      <tr>
-                                                        <th>Weight of empty beaker (x1)</th>
-                                                       <th>Weight of beaker with liquid(x2)</th>
-                                                       
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Water</td>
-                                                        <td>48.20</td>
-                                                        <td>53.8</td>
-                                                        <td style="padding: 2px;">w1 = 5.6</td>
-                                                  
-                                                      </tr>
-                                                  
-                                              </table>
-                                              
-                                          <!-- </div> -->
-                                          <div class="tableObservation" id="tableObservation">
-                                            <button type="button"  onclick="closeobservation()">Close</button>
-                                            
-                                        </div>
-                                         
-                                      </div>
-                                      <div class="observation" id="observation1">
-                                          <!-- <div class="tablediv" id="tablediv1"> -->
-                                              <table class="observationTable" id="observationTable1">
-                                                  
-                                                      <tr>
-                                                        <th rowspan="2">Liquid</th>
-                                                        <th colspan="2">Weight of 20 drops (g)</th>
-                                                        <th rowspan="2">(x2 - x1)g</th>
-                                                       
-                                                      </tr>
-                                                      <tr>
-                                                        <th>Weight of empty beaker (x1)</th>
-                                                       <th>Weight of beaker with liquid(x2)</th>
-                                                       
-                                                      </tr>
-                                                      <tr>
-                                                        <td>Kerosene</td>
-                                                        <td>48.20</td>
-                                                        <td>50.123</td>
-                                                        <td style="padding: 2px;">w1 = 1.923</td>
-                                                        
-                                                      </tr>
-                                                  
-                                              </table>
-                                          <!-- </div> -->
-                                          <div class="tableObservation" id="tableObservation1">
-                                              <button type="button" style="position: absolute; "   onclick="closeobservation()">Close</button>
-                                              
-                                          </div>
-                                      </div>
-                                      <div class="observation3" id="observation3" >
-                                        <div class="tablediv" id="tablediv3">
-                                            <table class="observationTable" id="observationTable3">
-                                                
-                                                    <tr>
-                                                      <th rowspan="2">Liquid</th>
-                                                      <th colspan="2">Weight of 20 drops (g)</th>
-                                                      <th rowspan="2">(x2 - x1)g</th>
-                                                      <th rowspan="2">Surface Tension (Dynes/cm)</th>
-                                                    </tr>
-                                                    <tr>
-                                                      <th>Weight of empty beaker (x1)</th>
-                                                     <th>Weight of beaker with liquid(x2)</th>
-                                                     
-                                                    </tr>
-                                                    <tr>
-                                                      <td>Water</td>
-                                                      <td>48.20</td>
-                                                      <td>53.8</td>
-                                                      <td style="padding: 2px;">w1 = 5.6</td>
-                                                      <td>&gamma;<sub>1</sub> = 72.8</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Kerosene</td>
-                                                        <td>48.20</td>
-                                                        <td>50.123</td>
-                                                        <td style="padding: 2px;">w1 = 1.923</td>
-                                                        <td>&gamma;<sub>2</sub> = 25</td>
-                                                      </tr>
-                                                
-                                            </table>
-                                        </div>
-                                     
-                                    </div>
 
-                  </div> 
+                    <div class="observation" id="observation">
+                      <!-- <div class="tablediv" id="tablediv"> -->
+                      <table class="observationTable" id="observationTable">
+                        <tr>
+                          <th rowspan="2">Liquid</th>
+                          <th colspan="2">Weight of 20 drops (g)</th>
+                          <th rowspan="2">(x2 - x1)g</th>
+                        </tr>
+                        <tr>
+                          <th>Weight of empty beaker (x1)</th>
+                          <th>Weight of beaker with liquid(x2)</th>
+                        </tr>
+                        <tr>
+                          <td>Water</td>
+                          <td>48.20</td>
+                          <td>53.8</td>
+                          <td style="padding: 2px">w1 = 5.6</td>
+                        </tr>
+                      </table>
 
+                      <!-- </div> -->
+                      <div class="tableObservation" id="tableObservation">
+                        <button type="button" onclick="closeobservation()">
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                    <div class="observation" id="observation1">
+                      <!-- <div class="tablediv" id="tablediv1"> -->
+                      <table class="observationTable" id="observationTable1">
+                        <tr>
+                          <th rowspan="2">Liquid</th>
+                          <th colspan="2">Weight of 20 drops (g)</th>
+                          <th rowspan="2">(x2 - x1)g</th>
+                        </tr>
+                        <tr>
+                          <th>Weight of empty beaker (x1)</th>
+                          <th>Weight of beaker with liquid(x2)</th>
+                        </tr>
+                        <tr>
+                          <td>Kerosene</td>
+                          <td>48.20</td>
+                          <td>50.123</td>
+                          <td style="padding: 2px">w1 = 1.923</td>
+                        </tr>
+                      </table>
+                      <!-- </div> -->
+                      <div class="tableObservation" id="tableObservation1">
+                        <button
+                          type="button"
+                          style="position: absolute"
+                          onclick="closeobservation()"
+                        >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+                    <div class="observation3" id="observation3">
+                      <div class="tablediv" id="tablediv3">
+                        <table class="observationTable" id="observationTable3">
+                          <tr>
+                            <th rowspan="2">Liquid</th>
+                            <th colspan="2">Weight of 20 drops (g)</th>
+                            <th rowspan="2">(x2 - x1)g</th>
+                            <th rowspan="2">Surface Tension (Dynes/cm)</th>
+                          </tr>
+                          <tr>
+                            <th>Weight of empty beaker (x1)</th>
+                            <th>Weight of beaker with liquid(x2)</th>
+                          </tr>
+                          <tr>
+                            <td>Water</td>
+                            <td>48.20</td>
+                            <td>53.8</td>
+                            <td style="padding: 2px">w1 = 5.6</td>
+                            <td>&gamma;<sub>1</sub> = 72.8</td>
+                          </tr>
+                          <tr>
+                            <td>Kerosene</td>
+                            <td>48.20</td>
+                            <td>50.123</td>
+                            <td style="padding: 2px">w1 = 1.923</td>
+                            <td>&gamma;<sub>2</sub> = 25</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
 
-            </div>
-            
-            <div id="instructions">
-              <div class="icontent">
+              <div id="instructions">
+                <div class="icontent">
                   <h2>Instructions</h2>
                   <ol>
-                      <li>Select the "Distilled water" from 'Select the experiment' dropdown menu.</li>
-                      <li>Find the weight of empty beaker in grams.</li>
-                      <li>Distilled water (reference liquid) is sucked into the stalagmometer (till point A) using a rubber bulb attached to the mouth of stalagmometer.
-                      </li>
-                      <li>Allow 20 drops of water to fall inside the beaker by clicking on the "OK" and again weigh the weight of the beaker with liquid.</li>
-                      <li>Click on the 'Observation' button to view the table.</li>
-                      <li>Change the procedure to "Kerosene" to calculate the dropping weight of kerosene.</li>
-                      <li>Click on the 'Start' button to start the experiment.</li>
-                      <li>Allow 20 drops of kerosene to fall inside the beaker and again weigh the weight of the beaker with liquid.</li>
-                      <li>Click on the 'Observation' button to view the table.</li>
-                      <li>Click on the 'Show Result' button to view the result.</li>
-                      
+                    <li>
+                      Select the "Distilled water" from 'Select the experiment'
+                      dropdown menu.
+                    </li>
+                    <li>Find the weight of empty beaker in grams.</li>
+                    <li>
+                      Distilled water (reference liquid) is sucked into the
+                      stalagmometer (till point A) using a rubber bulb attached
+                      to the mouth of stalagmometer.
+                    </li>
+                    <li>
+                      Allow 20 drops of water to fall inside the beaker by
+                      clicking on the "OK" and again weigh the weight of the
+                      beaker with liquid.
+                    </li>
+                    <li>
+                      Click on the 'Observation' button to view the table.
+                    </li>
+                    <li>
+                      Change the procedure to "Kerosene" to calculate the
+                      dropping weight of kerosene.
+                    </li>
+                    <li>
+                      Click on the 'Start' button to start the experiment.
+                    </li>
+                    <li>
+                      Allow 20 drops of kerosene to fall inside the beaker and
+                      again weigh the weight of the beaker with liquid.
+                    </li>
+                    <li>
+                      Click on the 'Observation' button to view the table.
+                    </li>
+                    <li>
+                      Click on the 'Show Result' button to view the result.
+                    </li>
                   </ol>
+                </div>
+                <!-- <button type="button" onclick="closeobservation()">Close</button> -->
               </div>
-              <!-- <button type="button" onclick="closeobservation()">Close</button> -->
+            </div>
           </div>
-          </div>
-        </div></div>
-      
-          <div id="variables" class="main__task-div" style="display: none;">
+
+          <div id="variables" class="main__task-div" style="display: none">
             <div class="settings-sections">
               <h3 class="task-title">Controls</h3>
               <div class="comment-sections">
                 <!-- <div class="blocker" onclick="closeobservation()" id="blocker"></div> -->
                 <div class="simoptions" id="simoptions">
                   <div class="grid2">
-                  <div class="procedure var-div">
+                    <div class="procedure var-div">
                       <label>Choose the experiment:</label>
-                      <select name="exp" id="exp" onChange="update()" onChange="checkClicked(evt)" >
+                      <select
+                        name="exp"
+                        id="exp"
+                        onChange="update()"
+                        onChange="checkClicked(evt)"
+                      >
                         <option value="Empty" hidden>Select the liquid</option>
                         <option value="Distilled water">Distilled water</option>
                         <option value="Kerosene">Kerosene</option>
-                    </select>
-                    <div class="wb" >
-                      <label>Weight of empty beaker : </label>
-                      
+                      </select>
+                      <div class="wb">
+                        <label>Weight of empty beaker : </label>
+                      </div>
+                      <span id="weightBeaker1"></span>
                     </div>
-                    <span id="weightBeaker1"></span>
-                     
-                  </div></div>
-                  
-                <div id="grid1" class="grid1">
-                  <div class="insert-reset-observation">
-                    <button id="insert" type="button" onclick="insert()" disabled>Start</button>
-                   
-                </div>
-                <div class="insert-reset-observation">
-                    <button id="observationbutton" type="button" onclick="openobservation()"
-                        disabled>Observations</button>
-                </div>
-                <div class="insert-reset-observation show" >
-                   
-                    <button id="finalresult" type="button" onclick="hallcovalue()" disabled>Show Result</button>
-                   
-                </div>
-                
-                </div>
-                  <div id="resulttext" style="display: none;">
-                      <p>Coefficient of Viscosity of</p>
-                      <p><span id="resliquid"></span>,η=<span id="viscocity">00</span></p>
                   </div>
-                
-              </div></div>
-         
-         
+
+                  <div id="grid1" class="grid1">
+                    <div class="insert-reset-observation">
+                      <button
+                        id="insert"
+                        type="button"
+                        onclick="insert()"
+                        disabled
+                      >
+                        Start
+                      </button>
+                    </div>
+                    <div class="insert-reset-observation">
+                      <button
+                        id="observationbutton"
+                        type="button"
+                        onclick="openobservation()"
+                        disabled
+                      >
+                        Observations
+                      </button>
+                    </div>
+                    <div class="insert-reset-observation show">
+                      <button
+                        id="finalresult"
+                        type="button"
+                        onclick="hallcovalue()"
+                        disabled
+                      >
+                        Show Result
+                      </button>
+                    </div>
+                  </div>
+                  <div id="resulttext" style="display: none">
+                    <p>Coefficient of Viscosity of</p>
+                    <p>
+                      <span id="resliquid"></span>,η=<span id="viscocity"
+                        >00</span
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-         
-          
-         </div>
-         
+          </div>
+
           <div class="main__task-div footer">
             <p>Copyright © SOLVE The Virtual Lab @ NITK Surathkal</p>
           </div>
