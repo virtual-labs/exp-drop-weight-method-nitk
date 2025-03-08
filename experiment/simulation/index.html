@@ -77,6 +77,12 @@
             /></a>
             <span>Help</span>
           </li>
+          <li class="tool-list tool-help" onclick="Refresh()">
+            <a class="tool-link" title="Help"
+              ><img src="./images/bluecwdull.svg" alt="Help" class="icons"
+            /></a>
+            <span>Reset</span>
+          </li>
 
           <li
             id="buttondown"
@@ -292,10 +298,10 @@
                       alt="Beaker"
                     />
                     <span id="dialogue" class="dialogue">
-                      <p id="divi1" class="divi1">
+                      <div id="divi1" class="divi1">
                         Note:- Allow 20 drops of liquid fall into the beaker.
-                      </p>
-                      <input type="button" id="ok1" value="OK" class="ok1" />
+                        <input type="button" id="ok1" value="OK" class="ok1" />
+                      </div>
                     </span>
                     <img
                       class="w1 a1-11"
@@ -321,7 +327,7 @@
                       src="images/beakerwithKerosene1.png"
                       alt="Beaker"
                     />
-                    <p id="grm2" class="grm2">50.123</p>
+                    <p id="grm2" class="grm2"></p>
 
                     <div id="myDiv"></div>
 
@@ -426,6 +432,17 @@
                           </tr>
                         </table>
                       </div>
+                      <button
+                        type="button"
+                        style="
+                          position: absolute;
+                          bottom: 3rem;
+                          padding: 0.5rem;
+                        "
+                        onclick="closeobservation3()"
+                      >
+                        Close
+                      </button>
                     </div>
                   </div>
                 </div>

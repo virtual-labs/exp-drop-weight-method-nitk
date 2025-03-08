@@ -82,8 +82,10 @@ function displayDiv(ele) {
         // Show only the variable section
         // document.getElementById("Results").style.display = "none";
         document.getElementById("variables").style.display = "block";
+        document.getElementById("grm2").innerHTML = 53.8;
       } else if (option == "Kerosene") {
         taskTitleText.textContent = "Kerosene";
+        document.getElementById("grm2").innerHTML = 50.123;
         // Show both the variable and result sections
         // document.getElementById("Results").style.display = "block";
         document.getElementById("variables").style.display = "block";
@@ -479,6 +481,10 @@ function insert() {
                                                                   ).style.display =
                                                                     "block";
                                                                   document.getElementById(
+                                                                    "grm2"
+                                                                  ).innerHTML =
+                                                                    "53.8";
+                                                                  document.getElementById(
                                                                     "observationbutton"
                                                                   ).disabled = false;
 
@@ -742,6 +748,10 @@ function insert() {
                                                                   ).style.display =
                                                                     "block";
                                                                   document.getElementById(
+                                                                    "grm2"
+                                                                  ).innerHTML =
+                                                                    "50.123";
+                                                                  document.getElementById(
                                                                     "observationbutton"
                                                                   ).disabled = false;
 
@@ -966,5 +976,13 @@ function hallcovalue() {
   document.getElementById("exp").disabled = true;
 
   // blurr = true;
+  // blurring();
+}
+
+function closeobservation3() {
+  document.getElementById("observation3").style.display = "none";
+  // document.getElementById('blocker').style.display = 'none';
+  // document.getElementById("exp").disabled = false;
+  // blurr = false;
   // blurring();
 }

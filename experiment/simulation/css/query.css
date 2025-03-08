@@ -197,7 +197,7 @@ em:current font size
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 1rem;
     width: 100%;
     font-size: 2.4rem;
     justify-content: space-evenly;
@@ -581,6 +581,9 @@ em:current font size
   .divi1 {
     font-size: 24px;
   }
+  #instructions {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 27em) {
@@ -612,7 +615,7 @@ em:current font size
     list-style: none;
     display: flex;
     flex-direction: row;
-    gap: 4rem;
+    gap: 1rem;
     width: 100%;
     font-size: 2.4rem;
     justify-content: space-evenly;
@@ -688,6 +691,9 @@ em:current font size
     transform: scale(0.42);
     margin-left: -242px;
     top: 85px !important;
+  }
+  #instructions {
+    padding: 0.5rem;
   }
 }
 
