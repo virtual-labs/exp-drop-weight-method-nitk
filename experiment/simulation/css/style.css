@@ -319,7 +319,7 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 13rem;
+  padding: 18rem;
   position: relative;
 }
 .objective__title,
@@ -456,7 +456,7 @@ h1 {
   grid-column: 1/-1;
   letter-spacing: 0.2rem;
 }
-.btn:disabled {
+.insert-reset-observation button:disabled {
   background-image: linear-gradient(
     to bottom,
     var(--clr-body-clr),
@@ -1558,9 +1558,8 @@ input[type="radio"] {
   );
 
   border-radius: 5px;
-  left: 343px;
-  top: 49px;
-  width: 354px;
+  width: auto;
+  bottom: -5rem;
   display: none;
 }
 
@@ -2276,15 +2275,9 @@ th {
 
 #instructions {
   display: none;
-  /* height: 400px; */
-  /* width: 700px; */
-
-  /* background-color: white; */
-  top: 110px;
-  left: 45px;
-  /* border: black solid; */
   border-width: 3px;
   z-index: 7;
+  padding: 5rem;
 }
 
 .icontent {
