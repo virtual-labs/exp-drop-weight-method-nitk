@@ -1,0 +1,43 @@
+
+/home/runner/work/exp-drop-weight-method-nitk/exp-drop-weight-method-nitk/experiment/simulation/js/script.js
+     1:7   warning  'canvas' is assigned a value but never used      no-unused-vars
+    15:7   warning  'btnTop' is assigned a value but never used      no-unused-vars
+    18:10  warning  'displayDiv' is defined but never used           no-unused-vars
+    62:5   warning  '$' is not defined                               no-undef
+    72:5   warning  'circle1' is not defined                         no-undef
+    74:5   warning  '$' is not defined                               no-undef
+    76:5   warning  '$' is not defined                               no-undef
+   113:5   warning  'b' is assigned a value but never used           no-unused-vars
+   115:5   warning  'magi' is assigned a value but never used        no-unused-vars
+   116:5   warning  'halli' is assigned a value but never used       no-unused-vars
+   117:5   warning  'e' is assigned a value but never used           no-unused-vars
+   118:5   warning  'c' is assigned a value but never used           no-unused-vars
+   119:5   warning  'concentration' is defined but never used        no-unused-vars
+   120:5   warning  'magcount' is assigned a value but never used    no-unused-vars
+   121:5   warning  'hallcount' is assigned a value but never used   no-unused-vars
+   130:5   warning  'row' is defined but never used                  no-unused-vars
+   131:5   warning  'ibrow' is defined but never used                no-unused-vars
+   132:5   warning  'rH' is assigned a value but never used          no-unused-vars
+   133:5   warning  'raisedtoTen' is defined but never used          no-unused-vars
+   150:10  warning  'up' is defined but never used                   no-unused-vars
+   155:10  warning  'down' is defined but never used                 no-unused-vars
+   183:10  warning  'update' is defined but never used               no-unused-vars
+   251:10  warning  'insert' is defined but never used               no-unused-vars
+   849:10  warning  'remove' is defined but never used               no-unused-vars
+   901:5   warning  'disable' is not defined                         no-undef
+   925:10  warning  'optionmaterial' is defined but never used       no-unused-vars
+   942:10  warning  'openobservation' is defined but never used      no-unused-vars
+   977:10  warning  'Refresh' is defined but never used              no-unused-vars
+   982:5   warning  'checkCount' is assigned a value but never used  no-unused-vars
+   983:10  warning  'checkClicked' is defined but never used         no-unused-vars
+   983:23  warning  'evt' is defined but never used                  no-unused-vars
+   986:5   warning  'option' is not defined                          no-undef
+   989:10  warning  'clearing' is defined but never used             no-unused-vars
+  1001:14  warning  'i' is already defined                           no-redeclare
+  1013:10  warning  'timer' is defined but never used                no-unused-vars
+  1017:10  warning  'help' is defined but never used                 no-unused-vars
+  1022:10  warning  'hallcovalue' is defined but never used          no-unused-vars
+  1036:10  warning  'closeobservation3' is defined but never used    no-unused-vars
+
+✖ 38 problems (0 errors, 38 warnings)
+
