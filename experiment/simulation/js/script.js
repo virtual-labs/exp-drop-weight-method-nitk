@@ -10,7 +10,7 @@ simControl.addEventListener("click", function () {
   });
 });
 const simIcons = document.querySelector(".sim-icons");
-
+const stepInfo = document.querySelector(".step-info");
 const stepTitle = document.querySelector(".practice-step-info");
 const btnTop = document.querySelector(".btn-top");
 const radioButtons = document.querySelectorAll('input[name="navigation"]');
@@ -190,7 +190,6 @@ function update() {
   let select = document.getElementById("exp");
   let option = select.options[select.selectedIndex].value;
   if (option == "Distilled water") {
-    console.log("1");
     //   document.getElementById("procedure-title").style.display = 'none';
     //   document.getElementById("proc").style.display = 'none';
     document.getElementById("insert").innerHTML = "Start";
@@ -205,12 +204,14 @@ function update() {
     document.getElementById("insert").disabled = true;
     // document.getElementById("electromagnet").style.display = 'block';
     document.getElementById("a1-4").style.display = "block";
+    stepInfo.innerHTML = "Finding weight of the empty beaker in grams.";
     document.getElementById("a1-4").style.animation = "moveBeaker 2s forwards";
     setTimeout(function () {
       document.getElementById("grm").style.display = "block";
       document.getElementById("weightBeaker1").innerHTML = "48.20 gm";
       document.getElementById("insert").disabled = false;
       document.getElementById("exp").disabled = true;
+      stepInfo.innerHTML = "";
     }, 2000);
     pcheck = true;
     // slider_reset();
@@ -229,6 +230,7 @@ function update() {
     document.getElementById("insert").innerHTML = "Start";
     // document.getElementById("remove").innerHTML = 'Start';
     document.getElementById("insert").disabled = true;
+    stepInfo.innerHTML = "Finding weight of the empty beaker in grams.";
     document.getElementById("a1-4").style.display = "block";
     document.getElementById("a1-4").style.animation = "moveBeaker 2s forwards";
     setTimeout(function () {
@@ -236,6 +238,7 @@ function update() {
       document.getElementById("weightBeaker1").innerHTML = "48.20 gm";
       document.getElementById("insert").disabled = false;
       document.getElementById("exp").disabled = true;
+      stepInfo.innerHTML = "";
     }, 2000);
 
     pcheck = false;
@@ -267,6 +270,9 @@ function insert() {
     document.getElementById("a1-6").style.display = "block";
     document.getElementById("grad").style.display = "block";
     document.getElementById("grad2").style.display = "block";
+    stepInfo.innerHTML =
+      "Distilled water is sucked into the stalagmometer (till point A) using a rubber bulb attached to the mouth of stalagmometer.";
+
     document.getElementById("a1-4").style.animation = "moveBeaker1 2s forwards";
     setTimeout(function () {
       document.getElementById("a1-7").style.animation =
@@ -294,6 +300,7 @@ function insert() {
               document.getElementById("a1-10").style.display = "block";
               document.getElementById("grad4").style.display = "block";
               document.getElementById("dialogue").style.display = "block";
+              stepInfo.innerHTML = "";
               document.getElementById("ok1").onclick = function () {
                 document.getElementById("dialogue").style.display = "none";
                 document.getElementById("grad4").style.animation =
@@ -302,44 +309,53 @@ function insert() {
                 document.getElementById("a1-15").style.animation =
                   "moveDrop 1s forwards";
                 setTimeout(function () {
+                  stepInfo.innerHTML = `Drop: 1`;
                   document.getElementById("a1-15").style.display = "block";
                   document.getElementById("a1-15").style.animation =
                     "moveDrop1 1s forwards";
                   setTimeout(function () {
+                    stepInfo.innerHTML = `Drop: 2`;
                     document.getElementById("a1-15").style.display = "block";
                     document.getElementById("a1-15").style.animation =
                       "moveDrop2 1s forwards";
                     setTimeout(function () {
+                      stepInfo.innerHTML = `Drop: 3`;
                       document.getElementById("a1-15").style.display = "block";
                       document.getElementById("a1-15").style.animation =
                         "moveDrop3 1s forwards";
                       setTimeout(function () {
+                        stepInfo.innerHTML = `Drop: 4`;
                         document.getElementById("a1-15").style.display =
                           "block";
                         document.getElementById("a1-15").style.animation =
                           "moveDrop4 1s forwards";
                         setTimeout(function () {
+                          stepInfo.innerHTML = `Drop: 5`;
                           document.getElementById("a1-15").style.display =
                             "block";
                           document.getElementById("a1-15").style.animation =
                             "moveDrop5 1s forwards";
                           setTimeout(function () {
+                            stepInfo.innerHTML = `Drop: 6`;
                             document.getElementById("a1-15").style.display =
                               "block";
                             document.getElementById("a1-15").style.animation =
                               "moveDrop6 1s forwards";
                             setTimeout(function () {
+                              stepInfo.innerHTML = `Drop: 7`;
                               document.getElementById("a1-15").style.display =
                                 "block";
                               document.getElementById("a1-15").style.animation =
                                 "moveDrop7 1s forwards";
                               setTimeout(function () {
+                                stepInfo.innerHTML = `Drop: 8`;
                                 document.getElementById("a1-15").style.display =
                                   "block";
                                 document.getElementById(
                                   "a1-15"
                                 ).style.animation = "moveDrop8 1s forwards";
                                 setTimeout(function () {
+                                  stepInfo.innerHTML = `Drop: 9`;
                                   document.getElementById(
                                     "a1-15"
                                   ).style.display = "block";
@@ -347,6 +363,7 @@ function insert() {
                                     "a1-15"
                                   ).style.animation = "moveDrop9 1s forwards";
                                   setTimeout(function () {
+                                    stepInfo.innerHTML = `Drop: 10`;
                                     document.getElementById(
                                       "a1-15"
                                     ).style.display = "block";
@@ -362,6 +379,7 @@ function insert() {
                                     ).style.animation =
                                       "moveGrad1 20s forwards";
                                     setTimeout(function () {
+                                      stepInfo.innerHTML = `Drop: 11`;
                                       document.getElementById(
                                         "a1-15"
                                       ).style.display = "block";
@@ -370,6 +388,7 @@ function insert() {
                                       ).style.animation =
                                         "moveDrop11 1s forwards";
                                       setTimeout(function () {
+                                        stepInfo.innerHTML = `Drop: 12`;
                                         document.getElementById(
                                           "a1-15"
                                         ).style.display = "block";
@@ -378,6 +397,7 @@ function insert() {
                                         ).style.animation =
                                           "moveDrop12 1s forwards";
                                         setTimeout(function () {
+                                          stepInfo.innerHTML = `Drop: 13`;
                                           document.getElementById(
                                             "a1-15"
                                           ).style.display = "block";
@@ -386,6 +406,7 @@ function insert() {
                                           ).style.animation =
                                             "moveDrop13 1s forwards";
                                           setTimeout(function () {
+                                            stepInfo.innerHTML = `Drop: 14`;
                                             document.getElementById(
                                               "a1-15"
                                             ).style.display = "block";
@@ -394,6 +415,7 @@ function insert() {
                                             ).style.animation =
                                               "moveDrop14 1s forwards";
                                             setTimeout(function () {
+                                              stepInfo.innerHTML = `Drop: 15`;
                                               document.getElementById(
                                                 "a1-15"
                                               ).style.display = "block";
@@ -402,6 +424,7 @@ function insert() {
                                               ).style.animation =
                                                 "moveDrop15 1s forwards";
                                               setTimeout(function () {
+                                                stepInfo.innerHTML = `Drop: 16`;
                                                 document.getElementById(
                                                   "a1-15"
                                                 ).style.display = "block";
@@ -410,6 +433,7 @@ function insert() {
                                                 ).style.animation =
                                                   "moveDrop16 1s forwards";
                                                 setTimeout(function () {
+                                                  stepInfo.innerHTML = `Drop: 17`;
                                                   document.getElementById(
                                                     "a1-15"
                                                   ).style.display = "block";
@@ -418,6 +442,7 @@ function insert() {
                                                   ).style.animation =
                                                     "moveDrop17 1s forwards";
                                                   setTimeout(function () {
+                                                    stepInfo.innerHTML = `Drop: 18`;
                                                     document.getElementById(
                                                       "a1-15"
                                                     ).style.display = "block";
@@ -426,6 +451,7 @@ function insert() {
                                                     ).style.animation =
                                                       "moveDrop18 1s forwards";
                                                     setTimeout(function () {
+                                                      stepInfo.innerHTML = `Drop: 19`;
                                                       document.getElementById(
                                                         "a1-15"
                                                       ).style.display = "block";
@@ -434,6 +460,7 @@ function insert() {
                                                       ).style.animation =
                                                         "moveDrop19 1s forwards";
                                                       setTimeout(function () {
+                                                        stepInfo.innerHTML = `Drop: 20`;
                                                         document.getElementById(
                                                           "a1-15"
                                                         ).style.display =
@@ -450,6 +477,7 @@ function insert() {
 
                                                           setTimeout(
                                                             function () {
+                                                              stepInfo.innerHTML = `Finding weight of beaker with distilled water in grams.`;
                                                               document.getElementById(
                                                                 "grad5"
                                                               ).style.display =
@@ -530,6 +558,8 @@ function insert() {
     document.getElementById("grad111").style.display = "block";
 
     document.getElementById("grad222").style.display = "block";
+    stepInfo.innerHTML =
+      "Kerosene is sucked into the stalagmometer (till point A) using a rubber bulb attached to the mouth of stalagmometer.";
     document.getElementById("a1-4").style.animation =
       "moveBeaker21 2s forwards";
     setTimeout(function () {
@@ -557,6 +587,7 @@ function insert() {
               document.getElementById("a1-5").style.display = "none";
               document.getElementById("a2-8").style.display = "none";
               document.getElementById("a2-10").style.display = "block";
+              stepInfo.innerHTML = "";
               document.getElementById("grad24").style.display = "block";
               document.getElementById("dialogue").style.display = "block";
               document.getElementById("ok1").onclick = function () {
@@ -567,44 +598,53 @@ function insert() {
                 document.getElementById("a1-16").style.animation =
                   "moveDrop 1s forwards";
                 setTimeout(function () {
+                  stepInfo.innerHTML = `Drop: 1`;
                   document.getElementById("a1-16").style.display = "block";
                   document.getElementById("a1-16").style.animation =
                     "moveDrop1 1s forwards";
                   setTimeout(function () {
+                    stepInfo.innerHTML = `Drop: 2`;
                     document.getElementById("a1-16").style.display = "block";
                     document.getElementById("a1-16").style.animation =
                       "moveDrop2 1s forwards";
                     setTimeout(function () {
+                      stepInfo.innerHTML = `Drop: 3`;
                       document.getElementById("a1-16").style.display = "block";
                       document.getElementById("a1-16").style.animation =
                         "moveDrop3 1s forwards";
                       setTimeout(function () {
+                        stepInfo.innerHTML = `Drop: 4`;
                         document.getElementById("a1-16").style.display =
                           "block";
                         document.getElementById("a1-16").style.animation =
                           "moveDrop4 1s forwards";
                         setTimeout(function () {
+                          stepInfo.innerHTML = `Drop: 5`;
                           document.getElementById("a1-16").style.display =
                             "block";
                           document.getElementById("a1-16").style.animation =
                             "moveDrop6 1s forwards";
                           setTimeout(function () {
+                            stepInfo.innerHTML = `Drop: 6`;
                             document.getElementById("a1-16").style.display =
                               "block";
                             document.getElementById("a1-16").style.animation =
                               "moveDrop6 1s forwards";
                             setTimeout(function () {
+                              stepInfo.innerHTML = `Drop: 7`;
                               document.getElementById("a1-16").style.display =
                                 "block";
                               document.getElementById("a1-16").style.animation =
                                 "moveDrop7 1s forwards";
                               setTimeout(function () {
+                                stepInfo.innerHTML = `Drop: 8`;
                                 document.getElementById("a1-16").style.display =
                                   "block";
                                 document.getElementById(
                                   "a1-16"
                                 ).style.animation = "moveDrop8 1s forwards";
                                 setTimeout(function () {
+                                  stepInfo.innerHTML = `Drop: 9`;
                                   document.getElementById(
                                     "a1-16"
                                   ).style.display = "block";
@@ -612,6 +652,7 @@ function insert() {
                                     "a1-16"
                                   ).style.animation = "moveDrop9 1s forwards";
                                   setTimeout(function () {
+                                    stepInfo.innerHTML = `Drop: 10`;
                                     document.getElementById(
                                       "a1-16"
                                     ).style.display = "block";
@@ -627,6 +668,7 @@ function insert() {
                                     ).style.animation =
                                       "moveGrad1 20s forwards";
                                     setTimeout(function () {
+                                      stepInfo.innerHTML = `Drop: 11`;
                                       document.getElementById(
                                         "a1-16"
                                       ).style.display = "block";
@@ -635,6 +677,7 @@ function insert() {
                                       ).style.animation =
                                         "moveDrop11 1s forwards";
                                       setTimeout(function () {
+                                        stepInfo.innerHTML = `Drop: 12`;
                                         document.getElementById(
                                           "a1-16"
                                         ).style.display = "block";
@@ -643,6 +686,7 @@ function insert() {
                                         ).style.animation =
                                           "moveDrop12 1s forwards";
                                         setTimeout(function () {
+                                          stepInfo.innerHTML = `Drop: 13`;
                                           document.getElementById(
                                             "a1-16"
                                           ).style.display = "block";
@@ -651,6 +695,7 @@ function insert() {
                                           ).style.animation =
                                             "moveDrop13 1s forwards";
                                           setTimeout(function () {
+                                            stepInfo.innerHTML = `Drop: 14`;
                                             document.getElementById(
                                               "a1-16"
                                             ).style.display = "block";
@@ -659,6 +704,7 @@ function insert() {
                                             ).style.animation =
                                               "moveDrop14 1s forwards";
                                             setTimeout(function () {
+                                              stepInfo.innerHTML = `Drop: 15`;
                                               document.getElementById(
                                                 "a1-16"
                                               ).style.display = "block";
@@ -668,6 +714,7 @@ function insert() {
                                                 "moveDrop15 1s forwards";
 
                                               setTimeout(function () {
+                                                stepInfo.innerHTML = `Drop: 16`;
                                                 document.getElementById(
                                                   "a1-16"
                                                 ).style.display = "block";
@@ -676,6 +723,7 @@ function insert() {
                                                 ).style.animation =
                                                   "moveDrop16 1s forwards";
                                                 setTimeout(function () {
+                                                  stepInfo.innerHTML = `Drop: 17`;
                                                   document.getElementById(
                                                     "a1-16"
                                                   ).style.display = "block";
@@ -684,6 +732,7 @@ function insert() {
                                                   ).style.animation =
                                                     "moveDrop17 1s forwards";
                                                   setTimeout(function () {
+                                                    stepInfo.innerHTML = `Drop: 18`;
                                                     document.getElementById(
                                                       "a1-16"
                                                     ).style.display = "block";
@@ -692,6 +741,7 @@ function insert() {
                                                     ).style.animation =
                                                       "moveDrop18 1s forwards";
                                                     setTimeout(function () {
+                                                      stepInfo.innerHTML = `Drop: 19`;
                                                       document.getElementById(
                                                         "a1-16"
                                                       ).style.display = "block";
@@ -700,6 +750,7 @@ function insert() {
                                                       ).style.animation =
                                                         "moveDrop19 1s forwards";
                                                       setTimeout(function () {
+                                                        stepInfo.innerHTML = `Drop: 20`;
                                                         document.getElementById(
                                                           "a1-16"
                                                         ).style.display =
@@ -710,6 +761,8 @@ function insert() {
                                                           "moveDrop20 1s forwards";
 
                                                         setTimeout(function () {
+                                                          stepInfo.innerHTML = `Finding weight of beaker with kerosene in grams.`;
+
                                                           document.getElementById(
                                                             "a1-16"
                                                           ).style.display =
@@ -887,6 +940,7 @@ function optionmaterial() {
 }
 
 function openobservation() {
+  stepInfo.innerHTML = "";
   if (pcheck == false) {
     document.getElementById("observation1").style.display = "block";
 
