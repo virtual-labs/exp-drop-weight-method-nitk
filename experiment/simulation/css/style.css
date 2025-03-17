@@ -2272,6 +2272,9 @@ th {
   width: 25px;
   height: 25px;
 }
+.step-info {
+  padding: 1rem;
+}
 
 #instructions {
   display: none;
